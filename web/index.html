@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Live Translations</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <div id="header-left">
+                <!-- menu button to toggle controls -->
+                <i class="material-icons" id="menu-button">menu</i>
+            </div>
+            <div id="header-center">
+                <h1>NBC Live Translations</h1>
+            </div>
+            <div id="header-right">
+
+            </div>
+        </header>
+        <main>
+            <div id="controls">
+                <!-- Label -->
+                <div id="microphones">                    
+                    <label for="microphone-select">Microphone:</label>
+                    <select id="microphone-select"></select>
+                </div>
+                <div id="language-selection">
+                    <label for="languages">Languages:</label>
+                    <select id="languages" multiple></select>
+                </div>
+                <div id="layouts">
+                    <label for="layoutControls">Layout:</label>
+                    <div id="layoutControls">
+                        <div class="layout-item">
+                            <input type="radio" name="layout" value="horizontal" checked>
+                            Horizontal
+                        </div>
+                        <div class="layout-item">
+                            <input type="radio" name="layout" value="vertical">
+                            Vertical
+                        </div>
+                    </div>
+                </div>
+                <div id="textSettings">
+                    <label for="textSize">Text Size (24px):</label>
+                    <!-- <select id="selectSize">
+                    </select> -->
+                    <!-- range -->
+                    <input type="range" id="selectSize" name="selectSize" min="14" max="50" value="24">
+                </div>
+                <div id="transcriptSettings">
+                    <label for="toggleTranscript">Toggle Transcript:</label>
+                    <input type="checkbox" id="toggleTranscriptCheckbox" checked>
+                </div>
+                <div id="stream_actions">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                </div>
+                <div id="status">
+                </div>
+                <!-- <div id="download">
+                    <a id="downloadLink" href="">Download Latest Transcript</a>
+                </div> -->
+                <div id="translation_files">
+                    <label for="tr_files_menu">Transcripts</label>
+                    <div id="tr_files_menu">
+                        <ul id="tr_files">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div id="translations"></div>
+                <div id="transcript"><span class="language">Transcript</span></div>
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+        
+        <script>
+            const selectSize = document.getElementById('selectSize');
+            const toggleTranscriptCheckbox = document.getElementById('toggleTranscriptCheckbox');
+            toggleTranscriptCheckbox.addEventListener('change', (e) => {
+                const transcript = document.getElementById('transcript');
+                if (e.target.checked) {
+                    transcript.style.display = 'block';
+                } else {
+                    transcript.style.display = 'none';
+                }
+            });
+            const loadSizes = () => {
+                for (let i = 14; i <= 50; i++) {
+                    // default is 24
+                    const option = document.createElement('option');
+                    option.value = i;
+                    option.innerText = i;
+                    if (i === 24) {
+                        option.selected = true;
+                    }
+                    selectSize.appendChild(option);
+                }
+            }
+
+            // on select
+            selectSize.addEventListener('input', (e) => {
+                const size = e.target.value;
+                // all .translation elements
+                const translations = document.querySelectorAll('.translation');
+                translations.forEach((translation) => {
+                    translation.style.fontSize = `${size}px`;
+                });
+                const transcript = document.getElementById('transcript');
+                transcript.style.fontSize = `${size}px`;
+
+                // update label
+                const textSize = document.querySelector('label[for="textSize"]');
+                textSize.innerText = `Text Size (${size}px):`;
+            });
+            loadSizes();
+        </script>
+        <script src="script.js"></script>
+    </body>
+</html>
