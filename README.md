@@ -147,4 +147,4 @@ This project is licensed under the terms of the MIT license.
 
 ## Contact
 
-If you have any questions, feel free to contact me at clementan25@gmail.com.
+If you have any questions, feel free to contact me.
