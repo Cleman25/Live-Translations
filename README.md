@@ -65,33 +65,28 @@ Before you install the dependencies, we recommend you to set up a Python virtual
 
     When the virtual environment is activated, your terminal prompt will be prefixed with `(venv)`.
 
-    ### Generating requirements.txt (if it doesn't exist)
-    
-    If the `requirements.txt` file doesn't exist in the project root directory, you can generate it. This file lists all the Python packages that your project depends on. Here's how to generate it:
-    
-    1. Make sure you have activated your virtual environment and installed all the necessary packages.
-    
-    2. Run the following command:
-    
-        ```bash
-        pip freeze > requirements.txt
-        ```
-    
-    This will create a `requirements.txt` file and fill it with a list of all installed packages and their versions. This is useful for other developers who want to install all the project dependencies in one go.
-    
-    ### Installing Dependencies
-    
-    With the virtual environment activated, you can now install the project dependencies. These are listed in the `requirements.txt` file in the project root directory. To install them, run:
-    
-        ```bash
-        pip install -r requirements.txt
-        ```
-    
-    This will download and install all the required packages.
-    
-    Remember to always activate the virtual environment before you start working on the project. When you're done, you can deactivate the virtual environment by simply running:
-    
-        deactivate
+### Generating requirements.txt (if it doesn't exist)
+
+If the `requirements.txt` file doesn't exist in the project root directory, you can generate it. This file lists all the Python packages that your project depends on. Here's how to generate it:
+
+1. Make sure you have activated your virtual environment and installed all the necessary packages.
+
+2. Run the following command:
+
+    pip freeze > requirements.txt
+
+This will create a `requirements.txt` file and fill it with a list of all installed packages and their versions. This is useful for other developers who want to install all the project dependencies in one go.
+
+### Installing Dependencies
+
+With the virtual environment activated, you can now install the project dependencies. These are listed in the `requirements.txt` file in the project root directory. To install them, run:
+    pip install -r requirements.txt
+
+This will download and install all the required packages.
+
+Remember to always activate the virtual environment before you start working on the project. When you're done, you can deactivate the virtual environment by simply running:
+
+    deactivate
 
 ## Google Cloud Setup
 
