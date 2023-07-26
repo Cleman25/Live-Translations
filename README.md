@@ -73,7 +73,9 @@ If the `requirements.txt` file doesn't exist in the project root directory, you 
 
 2. Run the following command:
 
+    ```bash
     pip freeze > requirements.txt
+    ```
 
 This will create a `requirements.txt` file and fill it with a list of all installed packages and their versions. This is useful for other developers who want to install all the project dependencies in one go.
 
