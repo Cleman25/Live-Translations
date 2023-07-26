@@ -83,9 +83,7 @@ This will create a `requirements.txt` file and fill it with a list of all instal
 
 With the virtual environment activated, you can now install the project dependencies. These are listed in the `requirements.txt` file in the project root directory. To install them, run:
 
-    ```bash
     pip install -r requirements.txt
-    ```
 
 This will download and install all the required packages.
 
