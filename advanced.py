@@ -141,6 +141,8 @@ def handle_start(data):
                 encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
                 sample_rate_hertz=RATE,
                 language_code=language_code,
+                # alternate language codes
+                alternative_language_codes=["en-US", "es-ES", "fr-FR", "fa-IR"],
                 enable_automatic_punctuation=True,
                 model='default',
                 use_enhanced=True,

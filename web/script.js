@@ -9,6 +9,7 @@ const transcriptDiv = document.getElementById('transcript');
 const statusDiv = document.getElementById("status");
 const menuBtn = document.getElementById("menu-button")
 const controls = document.getElementById('controls');
+const lightbulb = document.getElementById('lightbulb')
 // const downloadLink = document.getElementById("downloadLink")
 const LANG_MAX = 3;
 let selected = [];
@@ -54,10 +55,10 @@ const languages = [
 
 menuBtn.addEventListener('click', () => {
     // if #controls display is grid, set it to none, else grid
-    if (controls.style.display === 'grid') {
-        controls.style.display = 'none';
+    if (controls.style.display === 'none') {
+        controls.style.display = 'flex';
     } else {
-        controls.style.display = 'grid';
+        controls.style.display = 'none';
     }
 })
 
@@ -294,12 +295,14 @@ startBtn.addEventListener('click', () => {
     startBtn.disabled = true;
     stopBtn.disabled = false;
     started = true;
+    toggleLightBulb("on")
 });
 
 // if page refreshed, closed or not focused, stop
 window.addEventListener('beforeunload', () => {
     if (started) {
         console.log('Page refreshed, closed or not focused. Stopping transcription.')
+        toggleLightBulb("off")
         socket.emit('stop');
     }
 });
@@ -309,6 +312,7 @@ document.addEventListener('visibilitychange', () => {
     if (document.visibilityState === 'hidden') {
         console.log('Tab is hidden. Stopping transcription.')
         if (started) {
+            toggleLightBulb("off")
             socket.emit('stop');
         }
     }
@@ -318,9 +322,20 @@ document.addEventListener('visibilitychange', () => {
 stopBtn.addEventListener('click', () => {
     socket.emit('stop');
     if (started) {
+        toggleLightBulb("off")
         statusDiv.textContent = "Stopped";
+        // make lightbulb red
     }
     startBtn.disabled = false;
     stopBtn.disabled = true;
     started = false;
 });
+
+function toggleLightBulb(mode) {
+    if (mode === 'on') {
+        lightbulb.style.color = 'lime';
+    } else {
+        lightbulb.style.color = '#FF4848';
+    }
+    lightbulb.style.boxShadow = `0 0 7px 2px ${lightbulb.style.color}`;
+}

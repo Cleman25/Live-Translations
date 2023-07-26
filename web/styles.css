@@ -92,7 +92,7 @@ header {
 #header-right {
     flex: 1 1 25%;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
 }
 
@@ -374,7 +374,7 @@ li a {
     color: #40E0F0;
 }
 
-#menu-button {
+#menu-button, #lightbulb {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -386,6 +386,10 @@ li a {
     border-radius: 8px;
     background: #fff;
     box-shadow: 0 0 3px 0 #ccc;
+}
+
+#lightbulb {
+    box-shadow: none;
 }
 
 #menu-button:hover {
