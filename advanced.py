@@ -11,12 +11,18 @@ import time
 import threading
 import json
 from datetime import datetime
+from MicrophoneStream import MicrophoneStream
+from ContinuousMicrophoneStream import ContinuousMicrophoneStream
+from google.api_core.exceptions import OutOfRange
 
 # Audio recording parameters
 RATE = 16000
 CHUNK = int(RATE / 10)  # 100ms
 TIMEOUT = 30
 JSON_DIR = "translations"
+device_index = 0
+isRunning = False
+isPaused = False
 
 client = speech.SpeechClient()
 app = Flask(__name__, static_folder='web')
@@ -29,80 +35,11 @@ translationsJSON = {
     "languages": {}
 }
 
-stop_command = "stop."
-resume_command = "resume."
-
-class MicrophoneStream(object):
-    """Opens a recording stream as a generator yielding the audio chunks."""
-    def __init__(self, rate, chunk, device_index):
-        self._rate = rate
-        self._chunk = chunk
-        self._device_index = device_index
-
-        # Create a thread-safe buffer of audio data
-        self._buff = queue.Queue()
-        self.closed = True
-        self._last_chunk_time = time.time()
-
-    def __enter__(self):
-        self._audio_interface = pyaudio.PyAudio()
-        self._audio_stream = self._audio_interface.open(
-            format=pyaudio.paInt16,
-            channels=1, rate=self._rate,
-            input=True, frames_per_buffer=self._chunk,
-            stream_callback=self._fill_buffer,
-            input_device_index=self._device_index
-        )
-
-        self.closed = False
-
-        return self
-
-    def __exit__(self, type, value, traceback):
-        self._audio_stream.stop_stream()
-        self._audio_stream.close()
-        self.closed = True
-        self._buff.put(None)
-        self._audio_interface.terminate()
-
-    def _fill_buffer(self, in_data, frame_count, time_info, status_flags):
-        """Continuously collect data from the audio stream, into the buffer."""
-        self._buff.put(in_data)
-        self._last_chunk_time = time.time()  # Update the timestamp
-        return None, pyaudio.paContinue
-
-    def generator(self):
-        while not self.closed:
-            chunk = self._buff.get()
-            if chunk is None:
-                return
-            data = [chunk]
-
-            while True:
-                try:
-                    chunk = self._buff.get(block=False)
-                    if chunk is None:
-                        return
-                    data.append(chunk)
-                except queue.Empty:
-                    break
-
-            yield b''.join(data)
-
-    def stop(self):
-        if hasattr(self, '_audio_stream'):
-            self._audio_stream.stop_stream()
-            self._audio_stream.close()
-        self.closed = True
-        self._buff.put(None)
-        if hasattr(self, '_audio_interface'):
-            self._audio_interface.terminate()
-        
-    def pause(self):
-        self._audio_stream.stop_stream()
-
-    def resume(self):
-        self._audio_stream.start_stream()
+spoken_commands = {
+    "stop": "stop.",
+    "resume": "resume.",
+    "pause": "pause."
+}
 
 @app.route('/')
 def index():
@@ -129,64 +66,65 @@ def list_microphones():
 
 @socketio.on('start')
 def handle_start(data):
-    global stream
+    global stream, isRunning, isPaused, device_index
     device_index = int(data['deviceIndex'])
     for lan in data['languages']:
         languages.append(lan)
     try:
-        with MicrophoneStream(RATE, CHUNK, device_index) as stream:
-            audio_generator = stream.generator()
-            language_code = "en-CA"
-            config = speech.RecognitionConfig(
-                encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-                sample_rate_hertz=RATE,
-                language_code=language_code,
-                # alternate language codes
-                # alternative_language_codes=["en-US", "es-ES", "fr-FR", "fa-IR"],
-                enable_automatic_punctuation=True,
-                model='default',
-                use_enhanced=True,
-                enable_word_time_offsets=True
-            )
-            streaming_config = speech.StreamingRecognitionConfig(
-                config=config,
-                interim_results=True,
-                single_utterance=False
-            )
-            requests = (speech.StreamingRecognizeRequest(audio_content=content)
-                        for content in audio_generator)
-
+        isRunning = True
+        isPaused = False
+        stream = create_new_stream()
+        stream.__enter__()
+        # Start the stream duration monitor thread
+        threading.Thread(target=monitor_stream_duration, args=(stream,)).start()
+        # Start the transcription thread
+        threading.Thread(target=transcribe_stream, args=(stream,)).start()
+    except Exception as e:
+        logging.error(f"An error occurred: {e}")
+        socketio.emit('error', str(e))
+        handle_stop()
+        
+def transcribe_stream(stream):
+    while isRunning:
+        audio_generator = stream.generator()
+        language_code = "en-CA"
+        config = speech.RecognitionConfig(
+            encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
+            sample_rate_hertz=RATE,
+            language_code=language_code,
+            max_alternatives=1,
+            alternative_language_codes=["en-US"],
+            enable_automatic_punctuation=True,
+            model='default',
+            use_enhanced=True,
+            enable_word_time_offsets=True
+        )
+        streaming_config = speech.StreamingRecognitionConfig(
+            config=config,
+            interim_results=True,
+            single_utterance=False
+        )
+        requests = (speech.StreamingRecognizeRequest(audio_content=content)
+                    for content in audio_generator)
+        try:
+            print("Elapsed time: ", stream.elapsed_time())
             responses = client.streaming_recognize(streaming_config, requests)
-            
-            # Start the timeout check in a new thread
-            timeout_thread = threading.Thread(target=check_timeout)
-            timeout_thread.start()
-            # Now, put the transcription responses to use.
+            # print(f'{responses}')            
             for response in responses:
+                # print(f'{response}')
                 if not response.results:
                     continue
-
+                
                 result = response.results[0]
-
-                # Only process the result if it's final
-                # if not result.is_final:
-                #     continue
-
+                
                 if not result.alternatives:
                     continue
-
-                # Get the first alternative (the most likely transcription)
+                
                 alternative = result.alternatives[0]
-
-                # Extract the transcript and confidence
                 transcript = alternative.transcript
-                    
                 confidence = alternative.confidence
-
-                # Translate the transcript
                 translations = translate_text(transcript)
-
-                # Send the transcript and translations to the client
+                
                 socketio.emit('translation', {
                     'transcript': transcript,
                     'confidence': confidence,
@@ -196,10 +134,17 @@ def handle_start(data):
                 
                 if result.is_final:
                     # Check for spoken commands
-                    if transcript.lower() == stop_command:
-                        handle_stop()
-                    elif transcript.lower() == resume_command:
-                        handle_resume()
+                    for command, spoken_command in spoken_commands.items():
+                        if spoken_command in transcript.lower():
+                            print(f"Spoken command detected: {command}")
+                            if spoken_command == "stop.":
+                                handle_stop()
+                            elif spoken_command == "pause.":
+                                handle_pause()
+                            elif spoken_command == "resume.":
+                                handle_resume()
+                            socketio.emit(command)
+                            break
                     translationsJSON["transcript"].append({
                         "datetime": datetime.now().isoformat(),
                         "transcript": transcript,
@@ -212,9 +157,16 @@ def handle_start(data):
                             "datetime": datetime.now().isoformat(),
                             "translation": translation
                         })
-    except Exception as e:
-        logging.error(f"An error occurred: {e}")
-        emit('error', str(e))
+        except OutOfRange:
+            # Stream duration limit exceeded, restart the stream
+            print("Stream duration limit exceeded. Restarting stream.")
+            stream.__exit__(None, None, None)
+            stream = create_new_stream()
+            stream.__enter__()
+
+def create_new_stream():
+    global RATE, CHUNK, device_index
+    return ContinuousMicrophoneStream(RATE, CHUNK, device_index)
 
 def check_timeout():
     print(f"Timeout check started. Will stop transcription if no audio is detected for {TIMEOUT} seconds.")
@@ -227,29 +179,55 @@ def check_timeout():
         except Exception as e:
             print(f"An error occurred while checking for timeout: {e}")
             break
+        
+def monitor_stream_duration(stream):
+    print(f"Stream duration monitor started. Will stop transcription if the stream duration exceeds {300} seconds.")
+    while isRunning:
+        time.sleep(1)  # Check the stream duration every second
+        if stream.elapsed_time() > 290:
+            print("Stream duration is close to the limit. Resetting stream.")
+            # Signal the end of the stream
+            socketio.emit('resume')
+            # Reset the stream
+            print("Closing stream...")
+            stream.__exit__(None, None, None)
+            print("Creating new stream...")
+            stream = create_new_stream()
+            stream.__enter__()
 
 @socketio.on("stop")
 def handle_stop():
-    global stream
+    global stream, isRunning, isPaused
     print("Stop command received")
     if stream is not None:
         stream.stop()
         stream = None
+        isRunning = False
+        isPaused = False
     save_json()
         
 @socketio.on('pause')
 def handle_pause():
-    global stream
+    global stream, isPaused
     print("Pause command received")
     if stream is not None:
         stream.pause()
+        isPaused = True
 
 @socketio.on('resume')
 def handle_resume():
-    global stream
+    global stream, isPaused
     print("Resume command received")
-    if stream is not None:
+    if isRunning:
+        if stream is not None:
+            stream.__exit__(None, None, None)
+        stream = create_new_stream()
+        stream.__enter__()
+        threading.Thread(target=transcribe_stream, args=(stream,)).start()
+    elif isPaused:
         stream.resume()
+        isPaused = False
+    save_json()
 
 @socketio.on('get-translations')
 def get_translations():
@@ -258,6 +236,22 @@ def get_translations():
     files = [file for file in files if file.endswith('.json')]
     files.sort(reverse=True)
     emit('translations', files)
+    
+@socketio.on('status')
+def get_status():
+    global isRunning, isPaused
+    emit('status', {
+        'isRunning': isRunning,
+        'isPaused': isPaused
+    })
+
+@app.route('/status')
+def http_status():
+    global isRunning, isPaused
+    return {
+        'isRunning': isRunning,
+        'isPaused': isPaused
+    }
 
 @app.route('/download/', defaults={'filename': ''})
 @app.route('/download/<filename>')

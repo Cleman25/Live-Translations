@@ -31,6 +31,7 @@ window.onload = function() {
             }
         });
     socket.emit('get-translations')
+    socket.emit('status')
 };
 // Populate the languages dropdown
 const languages = [
@@ -146,6 +147,25 @@ function updateTranscript(tr, final) {
     transcriptDiv.scrollTop = transcriptDiv.scrollHeight;
 }
 
+socket.on('status', (data) => {
+    console.log(data)
+    // if data.isRunning and not Paused, Listening...
+    // if data.isRunning and paused, Paused...
+    // if not data.isRunning, Stopped
+    if (data.isRunning) {
+        if (data.isPaused) {
+            statusDiv.textContent = "Paused...";
+            toggleLightBulb('paused')
+        } else {
+            statusDiv.textContent = "Listening...";
+            toggleLightBulb('on')
+        }
+    } else {
+        statusDiv.textContent = `Please select a microphone and up to ${LANG_MAX} language(s) before starting.`;
+        toggleLightBulb('off')
+    }
+})
+
 socket.on('translations', (data) => {
     // files returned from the server
     // build a li to hook into #tr_files (ul)
@@ -246,6 +266,31 @@ socket.on('timeout', function() {
     statusDiv.textContent =  `No stream for 30 seconds. Please make sure your language(s) and microphone are still selected before re-starting.`;
     startBtn.disabled = false;
     stopBtn.disabled = true;
+    toggleLightBulb('off')
+    setStatus("Timed Out...")
+});
+
+// Handle pause
+socket.on('pause', function() {
+    console.log('Paused...')
+    toggleLightBulb('paused')
+    setStatus("Paused...")
+});
+
+// Handle resume
+socket.on('resume', function() {
+    console.log('Resumed...')
+    toggleLightBulb('on')
+    setStatus("Listening...")
+});
+
+// Handle error
+socket.on('error', function(data) {
+    console.log(data)
+    alert(data);
+    toggleLightBulb('off')
+    setStatus(`Error: ${data}`)
+    // statusDiv.textContent =  `Error: ${data.error}`;
 });
 
 function download(filename) {
@@ -296,46 +341,54 @@ startBtn.addEventListener('click', () => {
     stopBtn.disabled = false;
     started = true;
     toggleLightBulb("on")
+    setStatus("Listening...")
 });
 
-// if page refreshed, closed or not focused, stop
-window.addEventListener('beforeunload', () => {
-    if (started) {
-        console.log('Page refreshed, closed or not focused. Stopping transcription.')
-        toggleLightBulb("off")
-        socket.emit('stop');
-    }
-});
+// // if page refreshed, closed or not focused, stop
+// window.addEventListener('beforeunload', () => {
+//     if (started) {
+//         console.log('Page refreshed, closed or not focused. Stopping transcription.')
+//         toggleLightBulb("off")
+//         setStatus("Stopped.")
+//         socket.emit('stop');
+//     }
+// });
 
 // if in another tab, stop
-document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'hidden') {
-        console.log('Tab is hidden. Stopping transcription.')
-        if (started) {
-            toggleLightBulb("off")
-            socket.emit('stop');
-        }
-    }
-});
+// document.addEventListener('visibilitychange', () => {
+//     if (document.visibilityState === 'hidden') {
+//         console.log('Tab is hidden. Stopping transcription.')
+//         if (started) {
+//             toggleLightBulb("off")
+//             setStatus("Stopped.")
+//             socket.emit('stop');
+//         }
+//     }
+// });
 
 // Handle the stop button
 stopBtn.addEventListener('click', () => {
     socket.emit('stop');
     if (started) {
-        toggleLightBulb("off")
-        statusDiv.textContent = "Stopped";
-        // make lightbulb red
+        toggleLightBulb("off");
+        setStatus("Stopped.");
     }
     startBtn.disabled = false;
     stopBtn.disabled = true;
     started = false;
 });
 
+function setStatus(text) {
+    statusDiv.textContent = text;
+}
+
 function toggleLightBulb(mode) {
     if (mode === 'on') {
         lightbulb.style.color = 'lime';
-    } else {
+    } else if (mode === 'off') {
         lightbulb.style.color = '#FF4848';
+    } else if (mode === 'paused') {
+        lightbulb.style.color = '#FFD700';
     }
     lightbulb.style.boxShadow = `0 0 7px 2px ${lightbulb.style.color}`;
 }
