@@ -14,6 +14,7 @@ from datetime import datetime
 from MicrophoneStream import MicrophoneStream
 from ContinuousMicrophoneStream import ContinuousMicrophoneStream
 from google.api_core.exceptions import OutOfRange
+import atexit
 
 # Audio recording parameters
 RATE = 16000
@@ -285,6 +286,9 @@ def translate_text(text):
         print(f'{target}: {result}\n')
 
     return translations
+
+# Register the function to be called on exit
+atexit.register(save_json)
 
 if __name__ == '__main__':
     logging.basicConfig(level=logging.INFO)
