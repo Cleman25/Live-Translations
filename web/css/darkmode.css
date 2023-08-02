@@ -472,3 +472,7 @@ input:hover:before {
 #microphone-select .dropdown-title {
     color: #fff;
 }
+
+.tag {
+    box-shadow: 0 2px 3px 0 #111 !important;
+}
