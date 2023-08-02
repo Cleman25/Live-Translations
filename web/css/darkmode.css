@@ -381,6 +381,7 @@ button:hover {
 	display: inline-flex;
 	flex-wrap: wrap;
 	position: relative;
+    gap: 8px;
 }
 
 #tr_files li {
