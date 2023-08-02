@@ -282,11 +282,11 @@ def transcribe_stream(sid, stream):
                         if spoken_command in transcript.lower():
                             print(f"Spoken command detected: {command}")
                             if spoken_command == "stop.":
-                                stop()
+                                stop(sid)
                             elif spoken_command == "pause.":
-                                pause()
+                                pause(sid)
                             elif spoken_command == "resume.":
-                                resume()
+                                resume(sid)
                             sio.emit(command)
                             break
                     translationsJSON["transcript"].append({
