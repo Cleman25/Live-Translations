@@ -4,123 +4,59 @@
         <title>Live Translations</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/switch.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/slidebar.css">
     </head>
     <body>
         <header>
             <div id="header-left">
                 <!-- menu button to toggle controls -->
                 <i class="material-icons" id="menu-button">menu</i>
+                <i class="material-icons" id="toggle-start">play_arrow</i>
             </div>
             <div id="header-center">
                 <h1>Live Translations</h1>
             </div>
             <div id="header-right">
                 <!-- material icons light bulb (transparent) -->
+                <!-- display active microphone name -->
+                <span id="microphone-name"></span>
                 <i class="material-icons" id="lightbulb">lightbulb</i>
             </div>
         </header>
         <main>
-            <div id="controls">
-                <!-- Label -->
-                <div id="microphones">                    
-                    <label for="microphone-select">Microphone:</label>
-                    <select id="microphone-select"></select>
-                </div>
-                <div id="language-selection">
-                    <label for="languages">Languages:</label>
-                    <select id="languages" multiple></select>
-                </div>
-                <div id="layouts">
-                    <label for="layoutControls">Layout:</label>
-                    <div id="layoutControls">
-                        <div class="layout-item">
-                            <input type="radio" name="layout" value="horizontal" checked>
-                            Horizontal
-                        </div>
-                        <div class="layout-item">
-                            <input type="radio" name="layout" value="vertical">
-                            Vertical
-                        </div>
-                    </div>
-                </div>
-                <div id="textSettings">
-                    <label for="textSize">Text Size (24px):</label>
-                    <!-- <select id="selectSize">
-                    </select> -->
-                    <!-- range -->
-                    <input type="range" id="selectSize" name="selectSize" min="14" max="50" value="24">
-                </div>
-                <div id="transcriptSettings">
-                    <label for="toggleTranscript">Toggle Transcript:</label>
-                    <input type="checkbox" id="toggleTranscriptCheckbox" checked>
-                </div>
-                <div id="stream_actions">
-                    <button id="start">Start</button>
-                    <button id="stop">Stop</button>
-                </div>
-                <div id="status">
-                </div>
-                <!-- <div id="download">
-                    <a id="downloadLink" href="">Download Latest Transcript</a>
-                </div> -->
-                <div id="translation_files">
-                    <label for="tr_files_menu">Transcripts: </label>
-                    <div id="tr_files_menu">
-                        <ul id="tr_files">
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div id="content">
                 <div id="translations"></div>
-                <div id="transcript"><span class="language">Transcript</span></div>
+                <div id="transcript">
+                    <div class="history" data-language="transcript"></div>
+                    <div class="currentText"></div>
+                    <div class="language">Transcript</div>
+                </div>
             </div>
         </main>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+        <script src="https://cdn.socket.io/4.7.1/socket.io.js"></script>
+        <script src="/web/js/socket.js"></script>
         
         <script>
-            const selectSize = document.getElementById('selectSize');
-            const toggleTranscriptCheckbox = document.getElementById('toggleTranscriptCheckbox');
-            toggleTranscriptCheckbox.addEventListener('change', (e) => {
-                const transcript = document.getElementById('transcript');
-                if (e.target.checked) {
-                    transcript.style.display = 'block';
-                } else {
-                    transcript.style.display = 'none';
+            window.addEventListener('beforeunload', (e) => {
+                const url = window.location.pathname;
+                const instanceId = url.split('/')[1];
+                const language = url.split('/')[2];
+                socket.emit('tab_closed', { instance: instanceId, language: language });
+            });
+            // on page load, if url has instance id and language
+            // socket.emit('tab-active', { instance: 'instance-id', language: 'English' });
+            window.addEventListener('load', (e) => {
+                const url = window.location.pathname;
+                const instanceId = url.split('/')[1];
+                const language = url.split('/')[2];
+                if (instanceId && language) {
+                    socket.emit('tab_active', { instance: instanceId, language: language });
                 }
             });
-            const loadSizes = () => {
-                for (let i = 14; i <= 50; i++) {
-                    // default is 24
-                    const option = document.createElement('option');
-                    option.value = i;
-                    option.innerText = i;
-                    if (i === 24) {
-                        option.selected = true;
-                    }
-                    selectSize.appendChild(option);
-                }
-            }
-
-            // on select
-            selectSize.addEventListener('input', (e) => {
-                const size = e.target.value;
-                // all .translation elements
-                const translations = document.querySelectorAll('.translation');
-                translations.forEach((translation) => {
-                    translation.style.fontSize = `${size}px`;
-                });
-                const transcript = document.getElementById('transcript');
-                transcript.style.fontSize = `${size}px`;
-
-                // update label
-                const textSize = document.querySelector('label[for="textSize"]');
-                textSize.innerText = `Text Size (${size}px):`;
-            });
-            loadSizes();
         </script>
-        <script src="script.js"></script>
+        <!-- <script src="/web/js/script.js"></script> -->
+        <script src="/web/js/main.js"></script>
     </body>
 </html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- metas -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Live Translation Controls</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <!-- <link rel="stylesheet" type="text/css" href="/web/css/controls.css"> -->
+        <link rel="stylesheet" type="text/css" href="/web/css/darkmode.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/switch.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/slidebar.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/tags.css">
+        <link rel="stylesheet" type="text/css" href="/web/css/dropdowns.css">
+    </head>
+    <body>
+        <main>
+            <div class="left">
+                <label style="color: #fff;text-transform: uppercase;position: sticky;height:fit-content;top:0;left:0;right:0;background: #222;border-radius:0;padding:8px 0;z-index: 1000;">Designer</label>
+                <div id="controls" class="controls">
+
+                </div>
+            </div>
+            <div class="right">
+                <div class="system">
+                    <label for="server-info" style="padding:8px 0">Controls</label>
+                    <!-- information from /status -->
+                    <div id="server-info">
+                        <button id="start">
+                            <span class="btn-title">Start</span>
+                            <i class="material-icons">play_arrow</i>
+                        </button>
+                        <button id="stop">
+                            <span class="btn-title">Stop</span>
+                            <i class="material-icons">stop</i>
+                        </button>
+                        <!-- Running Status + Icon -->
+                        <div class="running">
+                            <span class="status" class="noselect">Translating:</span>
+                            <i class="material-icons">lightbulb</i>
+                        </div>
+                        <!-- Paused Status + Icon -->
+                        <div class="paused">
+                            <span class="status" class="noselect">Paused:</span>
+                            <i class="material-icons">pause</i>
+                        </div>
+                        <div id="microphone-select" class="dropdown" title="Select Microphone">
+                            <i class='material-icons'>mic</i>
+                            <span class="dropdown-title noselect">Select Microphone</span>
+                            <i class="material-icons dropdown-button noselect">arrow_drop_down</i>
+                            <div class="dropdown-content">
+                            </div>
+                        </div>
+                    </div>
+                    <label for="active-languages">Active Translations</label>
+                    <div id="active-languages">
+                    </div>
+                </div>
+                <label for="languages">Supported Languages</label>
+                <div id="languages">
+                </div>
+                <div class="instances">
+                    <!-- how many instances are running and which languages are requested per instance -->
+                </div>
+                <div id="transcript">
+                    <div class="history" data-language="transcript"></div>
+                    <div class="currentText"></div>
+                    <div class="language">Transcript</div>
+                </div>
+                <label for="translation_files">Saved Transcripts</label>
+                <div id="translation_files">
+                    <ul id="tr_files">
+
+                    </ul>
+                </div>
+                <!-- <div id="transcript" style="
+font-size: -webkit-xxx-large;
+">
+                    <div class="history" data-language="transcript">
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                        <span class="history-span">Test</span>
+                    </div>
+                    <div class="currentText">Test</div>
+                    <div class="language">Transcript</div>
+                </div> -->
+            </div>
+        </main>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+        <script src="/web/js/socket.js"></script>
+        <script src="/web/js/controls.js"></script>
+    </body>
+</html>

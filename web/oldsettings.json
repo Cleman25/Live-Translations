@@ -1,0 +1,66 @@
+{
+    "body": {
+        "Bg": "#000000",
+        "padding": 0
+    },
+    "header": {
+        "bg": "#ffffff",
+        "fontFamily": "Arial",
+        "textColor": "#000000",
+        "visible": false
+    },
+    "layout": "vertical",
+    "main": {
+        "boxShadow": "0px 0px 0px 0px rgba(0,0,0,0)",
+        "padding": 0
+    },
+    "transcript": {
+        "Bg": "#FFFFFF",
+        "TextColor": "#000000",
+        "currentText": {
+            "Bg": "#000000",
+            "TextColor": "#ffffff"
+        },
+        "fontFamily": "Arial",
+        "fontSize": 24,
+        "fontWeight": "normal",
+        "history": {
+            "Bg": "#FFFFFF",
+            "TextColor": "#000000",
+            "history-span": {
+                "Bg": "#FFFFFF",
+                "TextColor": "#222222"
+            }
+        },
+        "language": {
+            "Bg": "#FFFFFF",
+            "TextColor": "#000000"
+        },
+        "textColor": "#000000",
+        "visible": false
+    },
+    "translation": {
+        "Bg": "#141414",
+        "TextColor": "#ffffff",
+        "currentText": {
+            "Bg": "#141414",
+            "TextColor": "#ffffff"
+        },
+        "fontFamily": "Arial",
+        "fontSize": 41,
+        "fontWeight": "normal",
+        "history": {
+            "Bg": "#000000",
+            "TextColor": "#ffffff",
+            "history-span": {
+                "Bg": "#000000",
+                "TextColor": "#ffffff"
+            }
+        },
+        "language": {
+            "Bg": "#141414",
+            "TextColor": "#ffffff"
+        },
+        "textColor": "#000000"
+    }
+}

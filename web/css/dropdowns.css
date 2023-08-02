@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --dd-radius: 20px;
+    --dd-content-radius: 10px;
+    --dd-content-first-radius: 10px;
+    --dd-content-last-radius: 10px;
+}
+.dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    padding: 8px;
+    gap: 8px;
+    border-radius: var(--dd-radius);
+    background: #fafafa;
+    box-shadow: 0 2px 3px 0 #ccc;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+.dropdown .material-icons:first-child {
+    color: #777;
+}
+
+.dropdown-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+}
+
+.dropdown-button {
+    /* font-size: 14px; */
+    display: inline-flex;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    /* text-transform: uppercase; */
+    /* letter-spacing: 1px; */
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    background: #fafafa;
+    box-shadow: 3px 3px 16px 0 #ccc;
+    border-radius: var(--dd-content-radius);
+    gap:8px;
+    width: 100%;
+    z-index: 1;
+}
+
+.dropdown-content .dropdown-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    white-space: pre;
+    padding: 8px;
+    text-decoration: none;
+}
+
+.dropdown-content .dropdown-item:hover {
+    color: #f00;
+    background: #fafafa;
+    box-shadow: 0 0 3px 0 #ccc;
+}
+
+/* if first p border-top radius is 10px if bottom border-bottom radius is 10px else no radius */
+
+.dropdown-content .dropdown-item:first-child {
+    border-top-left-radius: var(--dd-content-first-radius);
+    border-top-right-radius: var(--dd-content-first-radius);
+}
+
+.dropdown-content .dropdown-item:last-child {
+    border-bottom-left-radius: var(--dd-content-last-radius);
+    border-bottom-right-radius: var(--dd-content-last-radius);
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* .dropdown:hover .dropdown-button {
+    display: none;
+} */
+
+.show {
+    display: flex;
+}

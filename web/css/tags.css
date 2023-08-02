@@ -1,0 +1,68 @@
+.tag {
+    border-radius: 20px;
+    padding: 8px;
+    display: inline-flex;
+    /* background: #fff; */
+    box-shadow: 0 2px 3px 0 #ccc;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.tag:hover {
+    background: #eee;
+    color: #333;
+}
+
+.tag .tag-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.tag .tag-close {
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    border-radius: 50px;
+    background: #fff;
+    cursor: pointer;
+    font-weight:bold;
+    padding:1px;
+}
+
+.tag .tag-close:hover {
+    background: #eee;
+    color: #111;
+}
+
+.tag-active {
+    background: #2196f3;
+    color: #fff;
+}
+
+.tag-active:hover {
+    /* background: #2196f3; */
+    /* background should be a bit darker than when not hover */
+    background: #1e88e5;
+    color: #fff;
+}
+
+.tag-active .tag-close {
+    color: #fff;
+    background: #111;
+}
+
+.tag-active:hover .tag-close {
+    background: #eee;
+    color: #111;
+}
+
+.noselect, .no-select {
+    /* disable select */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

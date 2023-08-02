@@ -1,0 +1,48 @@
+{
+    "body": {
+        "Bg": "#000000",
+        "padding": 0
+    },
+    "header": {
+        "bg": "#ffffff",
+        "fontFamily": "Arial",
+        "textColor": "#000000",
+        "visible": false
+    },
+    "layout": "horizontal",
+    "main": {
+        "boxShadow": "0px 0px 0px 0px rgba(0,0,0,0)",
+        "padding": 0
+    },
+    "transcript": {
+        "Bg": "#FFFFFF",
+        "TextColor": "#000000",
+        "visible": false
+    },
+    "translation": {
+        "Bg": "#141414",
+        "TextColor": "#ffffff",
+        "borderRadius": "0px",
+        "currentText": {
+            "Bg": "#141414",
+            "TextColor": "#ffffff"
+        },
+        "fontFamily": "Arial",
+        "fontSize": 41,
+        "fontWeight": "normal",
+        "history": {
+            "Bg": "#000000",
+            "TextColor": "#ffffff",
+            "history-span": {
+                "Bg": "#000000",
+                "TextColor": "#ffffff"
+            }
+        },
+        "language": {
+            "Bg": "#141414",
+            "TextColor": "#ffffff",
+            "fontSize": 14
+        },
+        "textColor": "#000000"
+    }
+}

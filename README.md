@@ -116,9 +116,13 @@ Remember to always activate the virtual environment before you start working on 
     python server.py
     ```
 
-2. Open your web browser and navigate to http://localhost:5000.
+2. Open your web browser and navigate to http://localhost:5000/controls.
 
-3. Select your microphone and the languages you want to translate to, then click the "Start" button to start transcribing and translating.
+3. From here you can style the translation pages to your liking. The changes do not reflect on the controls page.
+
+4. Select your microphone and the languages you want to translate to, then click the "Start" button to start transcribing and translating.
+
+6. Click any language tag in the supported languages section to open a new tab for that language.
 
 ## Troubleshooting
 
