@@ -51,10 +51,12 @@
                 const url = window.location.pathname;
                 const instanceId = url.split('/')[1];
                 const language = url.split('/')[2];
+                console.log(window)
                 if (instanceId && language) {
-                    socket.emit('tab_active', { instance: instanceId, language: language });
+                    socket.emit('tab_active', { instance: instanceId, language: language});
                 }
             });
+            // on page refresh
         </script>
         <!-- <script src="/web/js/script.js"></script> -->
         <script src="/web/js/main.js"></script>

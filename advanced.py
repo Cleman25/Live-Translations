@@ -140,6 +140,7 @@ def tab_closed(sid, data):
 @sio.event             
 # @socketio.on('tab-active')
 def tab_active(sid, data):
+    print(f'Tab active: {data}')
     global activeLanguages
     instance = data['instance']
     language = data['language']

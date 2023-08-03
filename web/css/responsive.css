@@ -1,0 +1,80 @@
+/* smaller screens */
+@media screen and (max-width: 700px) {
+    body {
+        /* overflow-y: auto; */
+        flex-direction: column;
+        min-height: 100vh;
+        width: 100%;
+        height: auto;
+    }
+    main {
+        flex-direction: column !important;
+        min-height: 100%;
+        /* overflow-y: auto; */
+    }
+
+    #microphone-select {
+        width: 100%;
+    }
+
+    .left, .right {
+        flex: 1 !important;
+        width: 100%;
+        align-self: stretch;
+        min-height: 100%;
+        overflow-y: hidden;
+        /* max-width: 100%; */
+    }
+
+    #controls, #system-display {
+        height: 100%;
+        padding: 0 8px;
+        /* overflow-y: hidden; */
+        justify-content: center;
+    }
+}
+/* medium screens */
+@media screen and (min-width: 700px) and (max-width: 1000px) {
+    main {
+        flex-direction: column !important;
+    }
+
+    .left, .right {
+        flex: 1;
+        width: 100%;
+        /* max-width: 100%; */
+    }
+}
+
+/* larger screens */
+@media screen and (min-width: 1000px) {
+    main {
+        flex-direction: row;
+        max-width: 1400px;
+    }
+    .left {
+        flex: 2;
+        overflow-y: auto;
+    }
+
+    .right {
+        flex: 1;
+        overflow-y: auto;
+        max-width: 500px;
+    }
+}
+
+#server-info .material-icons {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    text-align: center;
+    /* vertical-align: middle; */
+}
+
+.dropdown-item.active {
+    /* background-color: ; */
+    color: #007bff !important;
+}

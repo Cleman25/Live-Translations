@@ -48,7 +48,7 @@
         dropdown.title = title;
         if(preIcon) {
             const dropdownPreIcon = document.createElement('i');
-            dropdownPreIcon.className = 'material-icons noselect';
+            dropdownPreIcon.className = 'dropdown-pre-icon material-icons noselect';
             dropdownPreIcon.textContent = preIcon;
             dropdown.appendChild(dropdownPreIcon);
         }
@@ -77,7 +77,7 @@
         // add listeners
         dropdown.addEventListener('click', (e) => {
             e.stopPropagation();
-            if (e.target === dropdownButton || e.target === dropdownTitle) {
+            if (e.target === dropdownButton || e.target === dropdownTitle || e.target === dropdown || e.target === dropdownPreIcon) {
                 if (dropdownContent.classList.contains('show')) {
                     dropdownContent.classList.remove('show');
                 } else {
@@ -289,6 +289,19 @@
         updateTranscript(data.transcript, data.isFinal);
     });
 
+    socket.on('window', data => {
+        // update instance tab
+        // if instanceTabs data.instance does not exist, create one and equal data.window
+        console.log('Window:',data)
+        try {
+            if (!instanceTabs[data.instance]) {
+                instanceTabs[data.instance] = data.window;
+            }
+        } catch(e) {
+            console.log(e)
+        }
+    })
+
     function createLanguageTag(language) {
         // console.log(language)
         if (language) {
@@ -396,10 +409,12 @@
             const content = dropdown.querySelector('.dropdown-content');
             const title = dropdown.querySelector('.dropdown-title');
             const button = dropdown.querySelector('.dropdown-button');
+            // if first child is a material-icons i or span or if has class dropdown-pre-icon
+            const preIcon = dropdown.querySelector('.dropdown-pre-icon') || (dropdown.firstElementChild && (dropdown.firstElementChild.tagName === 'I' || dropdown.firstElementChild.tagName === 'SPAN'));
             
             dropdown.addEventListener('click', (e) => {
                 e.stopPropagation();
-                if (e.target === button || e.target === title) {
+                if (e.target === button || e.target === title || e.target === dropdown || e.target === preIcon) {
                     console.log('test')
                     if (content.classList.contains('show')) {
                         content.classList.remove('show');
@@ -409,16 +424,16 @@
                 }
             });
             
-            dropdown.addEventListener('mouseover', () => {
-                button.textContent = 'arrow_drop_up';
-                if (!content.classList.contains('show')) {
-                    content.classList.add('show')
-                }
-            })
+            // dropdown.addEventListener('mouseover', () => {
+            //     button.textContent = 'arrow_drop_up';
+            //     if (!content.classList.contains('show')) {
+            //         content.classList.add('show')
+            //     }
+            // })
             
-            dropdown.addEventListener('mouseout', () => {
-                button.textContent = 'arrow_drop_down';
-            })
+            // dropdown.addEventListener('mouseout', () => {
+            //     button.textContent = 'arrow_drop_down';
+            // })
 
             content.querySelectorAll('.dropdown-item').forEach((item) => {
                 item.addEventListener('click', (e) => {
@@ -455,15 +470,33 @@
 
     // on microphone selected, emit set-device-index
     microphoneSelect.addEventListener('click', (e) => {
-        const activeItem = microphoneSelect.querySelector('.active');
-        if (activeItem) {
-            const deviceId = activeItem.dataset.deviceId;
-            socket.emit('set_device_index', deviceId);
-        } else {
-            socket.emit('set_device_index', -1);
+        e.stopPropagation();
+        const micContent = microphoneSelect.querySelector('.dropdown-content')
+        if (!micContent.classList.contains('show')) {
+            micContent.classList.add('show');
         }
+        const activeItem = microphoneSelect.querySelector('.active');
+        const items = micContent.querySelectorAll('.dropdown-item');
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const deviceId = item.dataset.deviceId;
+                if (!activeItem) {
+                    item.classList.add('active');
+                    socket.emit('set_device_index', deviceId);
+                } else {
+                    if (activeItem === item) {
+                        activeItem.classList.remove('active');
+                        socket.emit('set_device_index', -1);
+                    } else {
+                        activeItem.classList.remove('active');
+                        item.classList.add('active');
+                        socket.emit('set_device_index', deviceId);
+                    }
+                }
+            })
+        })
     });
-
 
 
     function populateInUse() {
