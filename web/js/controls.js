@@ -28,10 +28,10 @@
         {code: 'ig', name: 'Igbo'}
         // Add more languages here
     ];
+    // get instance tabs from local if it exists
     socket.emit('status')
     socket.emit('instances')
     socket.emit('get_translations')
-    socket.emit('instances')
     socket.emit('supported_languages')
     socket.on('supported-languages', (data) => {
         languages = data;
@@ -39,7 +39,8 @@
         populateLanguages();
         console.log('Supported languages have been updated.')
     })
-    const instanceTabs = {};
+    let instanceTabs = {};
+    let instanceLanguages = {};
     function createDropdown(id, title, values={}, preIcon = null) {
         // values = {name: string, data: {name: value}}
         const dropdown = document.createElement('div')
@@ -505,6 +506,9 @@
             const languageObj = languages.find(lang => lang.code === language);
             console.log(languageObj)
             const languageTag = createLanguageTag(languageObj);
+            // add data.instance to the tag, make sure it matches instancesLanguages {'en': '1930f661-5d0e-4137-b45b-732e9a894eda'}
+            const instanceId = instanceLanguages[language];
+            languageTag.dataset.instance = instanceId;
             // add tag-active class
             languageTag.classList.add('tag-active');
             // remove onclick listener for this item and add a custome one that opens the tab associate with the instance id
@@ -519,6 +523,10 @@
                 if (instanceTab) {
                     instanceTab.focus();
                 }
+                socket.emit('tab_focus', {
+                    instance: instanceId,
+                    lang: language
+                })
             });
             languagesInUseDiv.appendChild(languageTag);
         }
@@ -526,7 +534,8 @@
 
     socket.on('instances', (data) => {
         console.log('Instances:', data);
-        activeLanguages = data;
+        activeLanguages = data.languages;
+        instanceLanguages = data.active;
         languagesInUseDiv.innerHTML = '';
         populateInUse();
     })
@@ -592,7 +601,7 @@
     // document.addEventListener('DOMContentLoaded', () => {
         document.body.addEventListener('click', (e) => {
             let target = e.target;
-            console.log(target)
+            // console.log(target)
             while (target && !target.matches('.tag')) {
                 target = target.parentElement;
             }
@@ -607,17 +616,23 @@
                     const instanceTab = Object.values(instanceTabs).find(tab => tab.location.href.includes(language));
                     console.log(instanceTab);
                     if (instanceTab) {
+                        // remove tag-active from this tag
+                        target.classList.remove('tag-active');
                         instanceTab.focus();
                     } else {
                         instanceId = generateUUID();
                         const url = `/${instanceId}/${language}`;
                         // console.log(url)
                         const tab = window.open(url, '_blank');
-                        // console.log(tab)
+                        // // console.log(tab)
                         instanceTabs[instanceId] = tab;
                         console.log(instanceTabs)
-                        // open the tab
+                        // // open the tab
                         tab.focus();
+                        socket.emit('tab_focus', {
+                            instance: instanceId,
+                            lang: language
+                        })
                         if (!activeLanguages[language]) {
                             activeLanguages[language] = [];
                         }

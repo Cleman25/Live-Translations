@@ -98,6 +98,12 @@ def get_settings():
         settings = json.load(f)
     return jsonify(settings)
 
+@sio.event     
+# @socketio.on('instances')
+def instances(sid):
+    global languages
+    sio.emit('instances', {'languages': languages, 'active': activeLanguages})
+
 # @socketio.on('set-device-index')
 @sio.event
 def set_device_index(sid, dIndex):
@@ -105,7 +111,6 @@ def set_device_index(sid, dIndex):
     global device_index
     device_index = int(dIndex)
     sio.emit('active-mic', device_index)
-    
 
 @sio.event
 # @socketio.on('supported-languages')
@@ -124,18 +129,18 @@ def supported_languages():
 def tab_closed(sid, data):
     print(f'Tab closed: {data}')
     global activeLanguages, languages
-    #  remove data['language'] form both variables
-    instance = data['instance']
     language = data['language']
     if language in activeLanguages:
-        if instance in activeLanguages[language]:
-            activeLanguages[language].remove(instance)
-        if len(activeLanguages[language]) == 0:
-            activeLanguages.pop(language)
+        del activeLanguages[language]
     if language in languages:
         languages.remove(language)
-    print(f'{languages}')
-    sio.emit('instances', languages)
+    print(f'{languages}\n{activeLanguages}')
+    instances(sid)
+    
+@sio.event
+def tab_focus(sid, data):
+    print(f'Focusing: {data}')
+    sio.emit('tab_focus', data)
 
 @sio.event             
 # @socketio.on('tab-active')
@@ -145,15 +150,10 @@ def tab_active(sid, data):
     instance = data['instance']
     language = data['language']
     add_language(sid, language)
-    # if instance not in activeLanguages[language]:
-    #     activeLanguages[language].append(instance)
-    sio.emit('instances', languages)
-
-@sio.event     
-# @socketio.on('instances')
-def instances(sid):
-    global languages
-    sio.emit('instances', languages)
+    if language not in activeLanguages:
+        activeLanguages[language] = instance
+    print(f'{languages}\n{activeLanguages}')
+    instances(sid)
 
 @sio.event
 # @socketio.on('update-settings')
@@ -198,7 +198,7 @@ def add_language(sid, lang):
     global languages
     if lang not in languages:
         languages.append(lang)
-    sio.emit('languages', languages)
+    instances(sid)
 
 @sio.event
 # @socketio.on('start')

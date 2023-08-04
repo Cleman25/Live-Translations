@@ -167,6 +167,15 @@
         }
     }
 
+    socket.on('tab_focus', (data) => {
+        // console.log(data)
+        // if data.instance and data.lang = langCode and instanceId call window.focus
+        if (data.instance === instanceId && data.lang === langCode) {
+            // console.log('Focusing')
+            window.focus();
+        }
+    })
+
 
     function buildBox(option) {
         // if a box for it exists, don't duplicate

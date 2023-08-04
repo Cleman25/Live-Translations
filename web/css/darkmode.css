@@ -8,9 +8,12 @@
 	display: flex;
     gap: 12px;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     overflow-y: auto;
+    /* height: 100%; */
+    /* min-height: fit-content; */
     /* padding: 0 8px; */
+    margin-bottom: 1em;
 }
 
 #system-display {
