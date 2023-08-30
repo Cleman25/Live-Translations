@@ -53,6 +53,8 @@
                 const language = url.split('/')[2];
                 if (instanceId && language) {
                     socket.emit('tab_active', { instance: instanceId, language: language});
+                } else {
+                    window.location.href = '/controls';
                 }
             });
             // on page refresh

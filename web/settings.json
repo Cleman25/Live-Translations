@@ -28,7 +28,7 @@
             "TextColor": "#ffffff"
         },
         "fontFamily": "Arial",
-        "fontSize": 82,
+        "fontSize": 45,
         "fontWeight": "normal",
         "history": {
             "Bg": "#000000",
@@ -39,9 +39,9 @@
             }
         },
         "language": {
-            "Bg": "#141414",
+            "Bg": "#e6e6e6",
             "TextColor": "#ffffff",
-            "fontSize": 18
+            "fontSize": 100
         },
         "textColor": "#000000"
     }
