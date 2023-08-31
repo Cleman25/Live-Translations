@@ -22,6 +22,27 @@
 
 #microphone-select {
 	width: 383px;
+    /* height: 30px; */
+	padding: 8px;
+    border-radius: 8px;
+	box-shadow: 0 3px 6px 0 #00000011;
+	background: #111111;
+}
+
+#microphone-select .dropdown-title,
+#microphone-select .material-icons,
+#microphone-select .material-symbols-outlines {
+	color: #fff;
+}
+
+dropdown-content {
+	background: #111 !important;
+	color: #fff;
+	box-shadow: 0 3px 6px 0 #00000011 !important;
+}
+
+dropdown-item {
+	color: #fff !important;
 }
 
 main label {
@@ -285,7 +306,7 @@ input[type="range"] {
 	flex-wrap: wrap;
 }
 
-#server-info .material-icons {
+#server-info .material-icons:not(.dropdown-button) {
 	border-radius: 50px;
 	color: #fff;
 }
@@ -469,7 +490,7 @@ input:hover:before {
 }
 
 #microphone-select .dropdown-title {
-    color: #fff;
+    /* color: #fff; */
 }
 
 .tag {

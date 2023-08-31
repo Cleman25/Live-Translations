@@ -171,3 +171,10 @@ cython_debug/
 northmount-baptist-church-dev-2762e42ab367.json
 /pyvenv.cfg
 /TODO.py
+/oldadvanced.py
+/attpadvanced.py
+/transcriber.py
+/translator.py
+/main.py
+/web/js/main.js
+/web/js/controls.js
