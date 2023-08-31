@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Live Translations</title>
+        <title>{{ title }}</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="/web/css/styles.css">
-        <link rel="stylesheet" type="text/css" href="/web/css/switch.css">
-        <link rel="stylesheet" type="text/css" href="/web/css/slidebar.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/switch.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/slidebar.css') }}">
     </head>
     <body>
         <header>
@@ -36,30 +36,29 @@
             </div>
         </main>
         <script src="https://cdn.socket.io/4.7.1/socket.io.js"></script>
-        <script src="/web/js/socket.js"></script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="/js/socket.js"></script> -->
+        <script src="{{ url_for('static', filename='js/socket.js') }}"></script>        
         <script>
             window.addEventListener('beforeunload', (e) => {
                 const url = window.location.pathname;
-                const instanceId = url.split('/')[1];
                 const language = url.split('/')[2];
-                socket.emit('tab_closed', { instance: instanceId, language: language });
+                socket.emit('tab_closed', { language: language });
             });
-            // on page load, if url has instance id and language
-            // socket.emit('tab-active', { instance: 'instance-id', language: 'English' });
             window.addEventListener('load', (e) => {
                 const url = window.location.pathname;
-                const instanceId = url.split('/')[1];
                 const language = url.split('/')[2];
-                if (instanceId && language) {
-                    socket.emit('tab_active', { instance: instanceId, language: language});
+                if (language) {
+                    socket.emit('tab_active', { language: language});
                 } else {
                     window.location.href = '/controls';
                 }
+                console.log(language);
             });
             // on page refresh
         </script>
-        <!-- <script src="/web/js/script.js"></script> -->
-        <script src="/web/js/main.js"></script>
+        <!-- <script src="/js/script.js"></script> -->
+        <!-- <script src="/js/main.js"></script> -->
+        <script src="{{ url_for('static', filename='js/translation.js') }}"></script>
     </body>
 </html>
