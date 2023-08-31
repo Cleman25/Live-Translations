@@ -116,7 +116,7 @@ Remember to always activate the virtual environment before you start working on 
     python server.py
     ```
 
-2. Open your web browser and navigate to http://localhost:5000/controls.
+2. Open your web browser and navigate to http://localhost:451/controls.
 
 3. From here you can style the translation pages to your liking. The changes do not reflect on the controls page.
 

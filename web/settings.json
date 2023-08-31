@@ -39,7 +39,7 @@
             }
         },
         "language": {
-            "Bg": "#e6e6e6",
+            "Bg": "#000000",
             "TextColor": "#ffffff",
             "fontSize": 100
         },
