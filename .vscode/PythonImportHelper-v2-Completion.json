@@ -1,0 +1,1075 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_from_directory",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_from_directory",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "SocketIO",
+        "importPath": "flask_socketio",
+        "description": "flask_socketio",
+        "isExtraImport": true,
+        "detail": "flask_socketio",
+        "documentation": {}
+    },
+    {
+        "label": "emit",
+        "importPath": "flask_socketio",
+        "description": "flask_socketio",
+        "isExtraImport": true,
+        "detail": "flask_socketio",
+        "documentation": {}
+    },
+    {
+        "label": "SocketIO",
+        "importPath": "flask_socketio",
+        "description": "flask_socketio",
+        "isExtraImport": true,
+        "detail": "flask_socketio",
+        "documentation": {}
+    },
+    {
+        "label": "emit",
+        "importPath": "flask_socketio",
+        "description": "flask_socketio",
+        "isExtraImport": true,
+        "detail": "flask_socketio",
+        "documentation": {}
+    },
+    {
+        "label": "speech",
+        "importPath": "google.cloud",
+        "description": "google.cloud",
+        "isExtraImport": true,
+        "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "translate_v2",
+        "importPath": "google.cloud",
+        "description": "google.cloud",
+        "isExtraImport": true,
+        "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "translate_v2",
+        "importPath": "google.cloud",
+        "description": "google.cloud",
+        "isExtraImport": true,
+        "detail": "google.cloud",
+        "documentation": {}
+    },
+    {
+        "label": "pyaudio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pyaudio",
+        "description": "pyaudio",
+        "detail": "pyaudio",
+        "documentation": {}
+    },
+    {
+        "label": "queue",
+        "importPath": "six.moves",
+        "description": "six.moves",
+        "isExtraImport": true,
+        "detail": "six.moves",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "MicrophoneStream",
+        "importPath": "MicrophoneStream",
+        "description": "MicrophoneStream",
+        "isExtraImport": true,
+        "detail": "MicrophoneStream",
+        "documentation": {}
+    },
+    {
+        "label": "MicrophoneStream",
+        "importPath": "MicrophoneStream",
+        "description": "MicrophoneStream",
+        "isExtraImport": true,
+        "detail": "MicrophoneStream",
+        "documentation": {}
+    },
+    {
+        "label": "ContinuousMicrophoneStream",
+        "importPath": "ContinuousMicrophoneStream",
+        "description": "ContinuousMicrophoneStream",
+        "isExtraImport": true,
+        "detail": "ContinuousMicrophoneStream",
+        "documentation": {}
+    },
+    {
+        "label": "OutOfRange",
+        "importPath": "google.api_core.exceptions",
+        "description": "google.api_core.exceptions",
+        "isExtraImport": true,
+        "detail": "google.api_core.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "atexit",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "atexit",
+        "description": "atexit",
+        "detail": "atexit",
+        "documentation": {}
+    },
+    {
+        "label": "queue",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "queue",
+        "description": "queue",
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "Observer",
+        "importPath": "watchdog.observers",
+        "description": "watchdog.observers",
+        "isExtraImport": true,
+        "detail": "watchdog.observers",
+        "documentation": {}
+    },
+    {
+        "label": "FileSystemEventHandler",
+        "importPath": "watchdog.events",
+        "description": "watchdog.events",
+        "isExtraImport": true,
+        "detail": "watchdog.events",
+        "documentation": {}
+    },
+    {
+        "label": "getRooms",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def getRooms():\n    # rooms = sio.manager.rooms['/']\n    rooms = socketio.server.manager.rooms['/']\n    print(f'{rooms}')\n    return rooms\n# Load settings from a JSON file\nwith open('./web/settings.json', 'r') as f:\n    settings = json.load(f)\n@app.route('/')\ndef home():",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def home():\n    return show_controls()\n@app.route('/translation/<language>')\ndef index(language=None):\n    if language is None:\n        return \"No language code specified\"\n    else:\n        for lang in supportedLanguages:\n            if lang['code'] == language:\n                language = lang['name']",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def index(language=None):\n    if language is None:\n        return \"No language code specified\"\n    else:\n        for lang in supportedLanguages:\n            if lang['code'] == language:\n                language = lang['name']\n                break\n        return render_template('index.html', title=f'{language} Translation')\n@app.route('/controls')",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "show_controls",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def show_controls():\n    return render_template('controls.html')\n@app.route('/settings', methods=['GET'])\ndef get_settings():\n    with open('web/settings.json') as f:\n        settings = json.load(f)\n    return jsonify(settings)\n# @sio.event     \n@socketio.on('instances')\ndef instances():",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "get_settings",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def get_settings():\n    with open('web/settings.json') as f:\n        settings = json.load(f)\n    return jsonify(settings)\n# @sio.event     \n@socketio.on('instances')\ndef instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "instances",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})\n# @sio.event\n@socketio.on('set_device_index')\ndef set_device_index(dIndex):\n    print(f'{dIndex}')\n    global device_index\n    device_index = int(dIndex)",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "set_device_index",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def set_device_index(dIndex):\n    print(f'{dIndex}')\n    global device_index\n    device_index = int(dIndex)\n    # sio.emit('active-mic', device_index)\n    socketio.emit('active-mic', device_index)\n# @sio.event\n@socketio.on('supported_languages')\ndef supported_languages():\n    global supportedLanguages",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "supported_languages",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    # sio.emit('supported-languages', supportedLanguages)\n    socketio.emit('supported-languages', supportedLanguages)\n# route for supported-languages\n@app.route('/supported-languages')\ndef supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n# @sio.event",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "supported_languages",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n# @sio.event\n@socketio.on('tab_closed')\ndef tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "tab_closed",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:\n    if language in languages:\n        languages.remove(language)\n    print(f'Removed {language}.\\nCurrent Languages: {languages}')\n    instances()\n# @sio.event",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "tab_focus",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def tab_focus(data):\n    print(f'Focusing: {data}')\n    # sio.emit('tab_focus', data)\n    socketio.emit('tab_focus', data)\n# @sio.event\n@socketio.on('tab_active')\ndef tab_active(data):\n    print(f'Tab active: {data}')\n    global languages\n    language = data['language']",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "tab_active",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def tab_active(data):\n    print(f'Tab active: {data}')\n    global languages\n    language = data['language']\n    add_language(language)\n# @sio.event\n@socketio.on('update_settings')\ndef update_settings(new_settings):\n    # Update the settings\n    global settings",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "update_settings",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def update_settings(new_settings):\n    # Update the settings\n    global settings\n    settings = new_settings\n    # Save the settings back to the JSON file\n    with open('./web/settings.json', 'w') as f:\n        json.dump(settings, f, indent=4)\n    # Emit an event to all clients to notify them of the updated settings\n    # sio.emit('settings-updated', settings)\n    socketio.emit('settings-updated', settings)",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "active_mic",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def active_mic():\n    # sio.emit('active-mic', device_index)\n    socketio.emit('active-mic', device_index)\n@app.route('/microphones')\ndef list_microphones():\n    p = pyaudio.PyAudio()\n    info = p.get_host_api_info_by_index(0)\n    numdevices = info.get('deviceCount')\n    devices = []\n    for i in range(0, numdevices): # type: ignore",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "list_microphones",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def list_microphones():\n    p = pyaudio.PyAudio()\n    info = p.get_host_api_info_by_index(0)\n    numdevices = info.get('deviceCount')\n    devices = []\n    for i in range(0, numdevices): # type: ignore\n        if (p.get_device_info_by_host_api_device_index(0, i).get('maxInputChannels')) > 0: # type: ignore\n            devices.append({\n                \"id\": i,\n                \"name\": p.get_device_info_by_host_api_device_index(0, i).get('name')",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "test_emit",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def test_emit():\n    # sio.emit('translation', {'message': 'test'})\n    socketio.emit('translation', {'message': 'test'})\n    return \"Emitted\"\n# @sio.event\n@socketio.on('add_language')\ndef add_language(lang):\n    global languages\n    # with data_lock:\n    if lang not in languages:",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "add_language",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def add_language(lang):\n    global languages\n    # with data_lock:\n    if lang not in languages:\n        languages.append(lang)\n    print(f'Added {lang}.\\nCurrent Languages: {languages}')\n    instances()\n# @sio.event\n@socketio.on('start')\ndef start():",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def start():\n    global stream, isRunning, isPaused, device_index, languages\n    if not isRunning:\n        try:\n            isRunning = True\n            isPaused = False\n            # sio.emit('instances', languages)\n            socketio.emit('instances', languages)\n            stream = create_new_stream()\n            stream.__enter__()",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "transcribe_stream",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def transcribe_stream(stream):\n    while isRunning:\n        audio_generator = stream.generator()\n        language_code = \"en-CA\"\n        config = speech.RecognitionConfig(\n            encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,\n            sample_rate_hertz=RATE,\n            language_code=language_code,\n            max_alternatives=1,\n            # alternative_language_codes=[\"en-US\"],",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "send_translations",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def send_translations(data):\n    print(f'{data}')\n    socketio.emit('translation', data)\n    print(f\"Sent translation to client: {data}\")\ndef create_new_stream():\n    global RATE, CHUNK, device_index\n    return ContinuousMicrophoneStream(RATE, CHUNK, device_index)\ndef check_timeout():\n    print(f\"Timeout check started. Will stop transcription if no audio is detected for {TIMEOUT} seconds.\")\n    while stream is not None:",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "create_new_stream",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def create_new_stream():\n    global RATE, CHUNK, device_index\n    return ContinuousMicrophoneStream(RATE, CHUNK, device_index)\ndef check_timeout():\n    print(f\"Timeout check started. Will stop transcription if no audio is detected for {TIMEOUT} seconds.\")\n    while stream is not None:\n        try:\n            if time.time() - stream._last_chunk_time > TIMEOUT:\n                print(f\"No audio detected for {TIMEOUT} seconds. Stopping transcription.\")\n                stop()",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "check_timeout",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def check_timeout():\n    print(f\"Timeout check started. Will stop transcription if no audio is detected for {TIMEOUT} seconds.\")\n    while stream is not None:\n        try:\n            if time.time() - stream._last_chunk_time > TIMEOUT:\n                print(f\"No audio detected for {TIMEOUT} seconds. Stopping transcription.\")\n                stop()\n            time.sleep(1)  # Sleep for a short time to prevent this loop from running too fast\n        except Exception as e:\n            print(f\"An error occurred while checking for timeout: {e}\")",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "monitor_stream_duration",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def monitor_stream_duration(stream):\n    print(f\"Stream duration monitor started. Will stop transcription if the stream duration exceeds {300} seconds.\")\n    while isRunning:\n        time.sleep(1)  # Check the stream duration every second\n        if stream.elapsed_time() >= 280:\n            print(\"Stream duration is close to the limit. Resetting stream.\")\n            # Signal the end of the stream\n            # sio.emit('resume')\n            socketio.emit('resume')\n            # Reset the stream",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "stop",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def stop():\n    global stream, isRunning, isPaused\n    print(\"Stop command received\")\n    if stream is not None:\n        stream.stop()\n        stream = None\n        isRunning = False\n        isPaused = False\n    save_json()\n    # sio.emit('status', {",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "pause",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def pause():\n    global stream, isPaused\n    print(\"Pause command received\")\n    if stream is not None:\n        stream.pause()\n        isPaused = True\n# @sio.event\n@socketio.on('resume')\ndef resume():\n    global stream, isPaused",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "resume",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def resume():\n    global stream, isPaused\n    print(\"Resume command received\")\n    if isRunning:\n        if stream is not None:\n            stream.__exit__(None, None, None)\n        stream = create_new_stream()\n        stream.__enter__()\n        # threading.Thread(target=transcribe_stream, args=(stream,)).start()\n        transcribe_stream(stream)",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "get_translations",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def get_translations():\n    # Get all files in translations and return them\n    files = os.listdir(JSON_DIR)\n    files = [file for file in files if file.endswith('.json')]\n    files.sort(reverse=True)\n    # sio.emit('translations', files)\n    socketio.emit('translations', files)\n# @sio.event\n@socketio.on('status')\ndef status():",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def status():\n    global isRunning, isPaused\n    # sio.emit('status', {\n    #     'isRunning': isRunning,\n    #     'isPaused': isPaused\n    # })\n    socketio.emit('status', {\n        'isRunning': isRunning,\n        'isPaused': isPaused\n    })",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "http_status",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def http_status():\n    global isRunning, isPaused\n    return {\n        'isRunning': isRunning,\n        'isPaused': isPaused\n    }\n# @sio.event\n# @socketio.on('disconnect')\n# def disconnect():\n#     global languages",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "download",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def download(filename):\n    print(f'Donwload Requested for {filename}')\n    if not filename:\n        # Get a list of all files in the directory\n        files = os.listdir(JSON_DIR)\n        # Filter the list to include only .json files\n        files = [file for file in files if file.endswith('.json')]\n        # If there are no .json files, return an error\n        if not files:\n            return \"No files available for download\", 404",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "save_json",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def save_json():\n    print('Saving translation data to json')\n    with open(os.path.join(JSON_DIR, f\"{datetime.now().date()}.json\"), \"w\") as f:\n        json.dump(translationsJSON, f, indent=4)\ndef translate_text(text):\n    # with data_lock:\n    #     current_languages = languages.copy()\n    current_languages = languages.copy()\n    translations = {}\n    for target in current_languages:",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "translate_text",
+        "kind": 2,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "def translate_text(text):\n    # with data_lock:\n    #     current_languages = languages.copy()\n    current_languages = languages.copy()\n    translations = {}\n    for target in current_languages:\n        result = translate_client.translate(text, target_language=target)\n        translations[target] = result['translatedText']\n        print(f'{target}: {result}\\n')\n    return translations",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "RATE",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "RATE = 16000\nCHUNK = int(RATE / 10)  # 100ms\nTIMEOUT = 30\nJSON_DIR = \"translations\"\ndevice_index = -1\nisRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "CHUNK",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "CHUNK = int(RATE / 10)  # 100ms\nTIMEOUT = 30\nJSON_DIR = \"translations\"\ndevice_index = -1\nisRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "TIMEOUT",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "TIMEOUT = 30\nJSON_DIR = \"translations\"\ndevice_index = -1\nisRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "JSON_DIR",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "JSON_DIR = \"translations\"\ndevice_index = -1\nisRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "device_index",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "device_index = -1\nisRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "isRunning",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "isRunning = False\nisPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\n# sio = socketio.Server(cors_allowed_origins=\"*\")",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "isPaused",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "isPaused = False\nclient = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\n# sio = socketio.Server(cors_allowed_origins=\"*\")\n# app.wsgi_app = socketio.WSGIApp(sio, app.wsgi_app)",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "client",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "client = speech.SpeechClient()\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\n# sio = socketio.Server(cors_allowed_origins=\"*\")\n# app.wsgi_app = socketio.WSGIApp(sio, app.wsgi_app)\ntranslate_client = translate.Client()",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "app = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\n# app.config.update(\n#     SESSION_COOKIE_SECURE=True,\n#     SESSION_COOKIE_SAMESITE='None',\n# )\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\n# sio = socketio.Server(cors_allowed_origins=\"*\")\n# app.wsgi_app = socketio.WSGIApp(sio, app.wsgi_app)\ntranslate_client = translate.Client()\nlanguages = []",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "socketio",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "socketio = SocketIO(app, cors_allowed_origins=\"*\")\n# sio = socketio.Server(cors_allowed_origins=\"*\")\n# app.wsgi_app = socketio.WSGIApp(sio, app.wsgi_app)\ntranslate_client = translate.Client()\nlanguages = []\nstream = None\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "translate_client",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "translate_client = translate.Client()\nlanguages = []\nstream = None\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\nspoken_commands = {\n    \"stop\": \"stop.\",\n    \"resume\": \"resume.\",",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "languages",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "languages = []\nstream = None\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\nspoken_commands = {\n    \"stop\": \"stop.\",\n    \"resume\": \"resume.\",\n    \"pause\": \"pause.\"",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "stream",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "stream = None\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\nspoken_commands = {\n    \"stop\": \"stop.\",\n    \"resume\": \"resume.\",\n    \"pause\": \"pause.\"\n}",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "translationsJSON",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "translationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\nspoken_commands = {\n    \"stop\": \"stop.\",\n    \"resume\": \"resume.\",\n    \"pause\": \"pause.\"\n}\nsupportedLanguages = [",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "spoken_commands",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "spoken_commands = {\n    \"stop\": \"stop.\",\n    \"resume\": \"resume.\",\n    \"pause\": \"pause.\"\n}\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},\n    {'code': 'ar', 'name': 'Arabic'},",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "supportedLanguages",
+        "kind": 5,
+        "importPath": "advanced",
+        "description": "advanced",
+        "peekOfCode": "supportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},\n    {'code': 'ar', 'name': 'Arabic'},\n    {'code': 'zh', 'name': 'Chinese'},\n    {'code': 'fr', 'name': 'French'},\n    {'code': 'de', 'name': 'German'},\n    {'code': 'hi', 'name': 'Hindi'},\n    {'code': 'it', 'name': 'Italian'},",
+        "detail": "advanced",
+        "documentation": {}
+    },
+    {
+        "label": "ContinuousMicrophoneStream",
+        "kind": 6,
+        "importPath": "ContinuousMicrophoneStream",
+        "description": "ContinuousMicrophoneStream",
+        "peekOfCode": "class ContinuousMicrophoneStream(MicrophoneStream):\n    \"\"\"Opens a recording stream as a generator yielding the audio chunks.\n    This inherits from MicrophoneStream and overrides the __enter__ and __exit__ methods.\n    \"\"\"\n    def __init__(self, rate, chunk, device_index):\n        super().__init__(rate, chunk, device_index)\n        self._last_chunk_time = time.time()\n        self._last_chunk = None\n    def reset(self):\n        \"\"\"Resets the stream..\"\"\"",
+        "detail": "ContinuousMicrophoneStream",
+        "documentation": {}
+    },
+    {
+        "label": "NewFileHandler",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class NewFileHandler(FileSystemEventHandler):\n    def on_created(self, event):\n        if event.is_directory or not event.src_path.endswith('.txt'):\n            return\n        with open(event.src_path, 'r') as file:\n            transcription = file.read()\n        # Translate transcription\n        translation = translate_client.translate(transcription, target_language='en')\n        # Emit transcription and translation via SocketIO\n        socketio.emit('new_transcription', {'content': transcription, 'translation': translation['translatedText']})",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "updatetranscription_path",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def updatetranscription_path(tpath):\n    global transcription_path, transcription_dir\n    tempTranscription_path = transcription_dir+tpath\n    # remove // and test for location, if it exists, update curerntTranslation\n    tempTranscription_path.replace('//', '/')\n    if os.path.exists(tempTranscription_path):\n        transcription_path = tempTranscription_path\n    print(f'Current translation: {transcription_path}')\n# Function to handle new file creation\nclass NewFileHandler(FileSystemEventHandler):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getLatestTranscription",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getLatestTranscription():\n    \"\"\" Look for the latest transcription and update the transcription_path with the correct path\n    \"\"\"\n    print(f'Looking for latest transcription')\n    global transcription_path, transcription_dir\n    print(f'Trasnscription Directory: {transcription_dir}')\n    # Get a list of all files in the directory\n    files = os.listdir(transcription_dir)\n    print(f'files pre check {files}')\n    # Filter the list to include only .txt files",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getTranscription",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getTranscription():\n    last_size = 0\n    global transcription_path\n    while isRunning:\n        if transcription_path is None:\n            logging.error(\"transcription_path is not set.\")\n            time.sleep(5)  # Wait for some time before trying again\n            continue\n        try:\n            # the tail read",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "getRooms",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def getRooms():\n    # rooms = sio.manager.rooms['/']\n    rooms = socketio.server.manager.rooms['/']\n    print(f'{rooms}')\n    return rooms\n@app.route('/')\ndef home():\n    return show_controls()\n@app.route('/controls')\ndef show_controls():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def home():\n    return show_controls()\n@app.route('/controls')\ndef show_controls():\n    return render_template('controls.html')\n@app.route('/settings', methods=['GET'])\ndef get_settings():\n    with open('web/settings.json') as f:\n        settings = json.load(f)\n    return jsonify(settings)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "show_controls",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def show_controls():\n    return render_template('controls.html')\n@app.route('/settings', methods=['GET'])\ndef get_settings():\n    with open('web/settings.json') as f:\n        settings = json.load(f)\n    return jsonify(settings)\n@app.route('/supported-languages')\ndef supported_languages():\n    global supportedLanguages",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_settings",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_settings():\n    with open('web/settings.json') as f:\n        settings = json.load(f)\n    return jsonify(settings)\n@app.route('/supported-languages')\ndef supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n@socketio.on('instances')\ndef instances():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "supported_languages",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n@socketio.on('instances')\ndef instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "instances",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tab_closed",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:\n    if language in languages:\n        languages.remove(language)\n    print(f'Removed {language}.\\nCurrent Languages: {languages}')\n    instances()\n@socketio.on('tab_focus')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tab_focus",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def tab_focus(data):\n    print(f'Focusing: {data}')\n    socketio.emit('tab_focus', data)\n@socketio.on('tab_active')\ndef tab_active(data):\n    print(f'Tab active: {data}')\n    global languages\n    language = data['language']\n    add_language(language)\n@socketio.on('update_settings')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "tab_active",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def tab_active(data):\n    print(f'Tab active: {data}')\n    global languages\n    language = data['language']\n    add_language(language)\n@socketio.on('update_settings')\ndef update_settings(new_settings):\n    global settings\n    settings = new_settings\n    with open('./web/settings.json', 'w') as f:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "update_settings",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def update_settings(new_settings):\n    global settings\n    settings = new_settings\n    with open('./web/settings.json', 'w') as f:\n        json.dump(settings, f, indent=4)\n    socketio.emit('settings-updated', settings)\n@socketio.on('supported_languages')\ndef supported_languages():\n    global supportedLanguages\n    socketio.emit('supported-languages', supportedLanguages)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "supported_languages",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    socketio.emit('supported-languages', supportedLanguages)\n@socketio.on('add_language')\ndef add_language(lang):\n    global languages\n    if lang not in languages:\n        languages.append(lang)\n    print(f'Added {lang}.\\nCurrent Languages: {languages}')\n    instances()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "add_language",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def add_language(lang):\n    global languages\n    if lang not in languages:\n        languages.append(lang)\n    print(f'Added {lang}.\\nCurrent Languages: {languages}')\n    instances()\n# Start observer in a separate thread\ndef start_observer():\n    global transcription_dir\n    if not os.path.exists(transcription_dir):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start_observer",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def start_observer():\n    global transcription_dir\n    if not os.path.exists(transcription_dir):\n        os.makedirs(transcription_dir)\n    event_handler = NewFileHandler()\n    observer = Observer()\n    observer.schedule(event_handler, transcription_dir, recursive=False)\n    observer.start()\n    observer.join()\ndef send_translations(data):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "send_translations",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def send_translations(data):\n    print(f'{data}')\n    socketio.emit('translation', data)\n    print(f\"Sent translation to client: {data}\")\n@socketio.on('start')\ndef start():\n    print(f'Starting Transcription')\n    global isRunning, languages, transcription_path, transcription_dir\n    if not isRunning:\n        try:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "start",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def start():\n    print(f'Starting Transcription')\n    global isRunning, languages, transcription_path, transcription_dir\n    if not isRunning:\n        try:\n            print(f'Was not running')\n            isRunning = True\n            getLatestTranscription()\n            socketio.emit('instances', languages)\n            if transcription_path != \"\":",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "stop",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def stop():\n    global isRunning\n    print(\"Stop command received\")\n    if isRunning:\n        isRunning = False\n    save_json()\n    status()\n@socketio.on('get_translations')\ndef get_translations():\n    # Get all files in translations and return them",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "get_translations",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def get_translations():\n    # Get all files in translations and return them\n    files = os.listdir(JSON_DIR)\n    files = [file for file in files if file.endswith('.json')]\n    files.sort(reverse=True)\n    # sio.emit('translations', files)\n    socketio.emit('translations', files)\n@app.route('/translation/<language>')\ndef index(language=None):\n    if language is None:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def index(language=None):\n    if language is None:\n        return \"No language code specified\"\n    else:\n        for lang in supportedLanguages:\n            if lang['code'] == language:\n                language = lang['name']\n                break\n        return render_template('index.html', title=f'{language} Translation')\n@socketio.on('status')",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def status():\n    global isRunning\n    socketio.emit('status', {\n        'isRunning': isRunning\n    })\n@app.route('/status')\ndef http_status():\n    global isRunning\n    return {\n        'isRunning': isRunning",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "http_status",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def http_status():\n    global isRunning\n    return {\n        'isRunning': isRunning\n    }\n# @app.route('/')\n# def index():\n#     return render_template('index.html')\n@socketio.on('connect')\ndef on_connect():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "on_connect",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def on_connect():\n    print('Client connected')\n@socketio.on('disconnect')\ndef on_disconnect():\n    print('Client disconnected')\n@app.route('/download/', defaults={'filename': ''})\n@app.route('/download/<filename>')\ndef download(filename):\n    print(f'Donwload Requested for {filename}')\n    if not filename:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "on_disconnect",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def on_disconnect():\n    print('Client disconnected')\n@app.route('/download/', defaults={'filename': ''})\n@app.route('/download/<filename>')\ndef download(filename):\n    print(f'Donwload Requested for {filename}')\n    if not filename:\n        # Get a list of all files in the directory\n        files = os.listdir(JSON_DIR)\n        # Filter the list to include only .json files",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "download",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def download(filename):\n    print(f'Donwload Requested for {filename}')\n    if not filename:\n        # Get a list of all files in the directory\n        files = os.listdir(JSON_DIR)\n        # Filter the list to include only .json files\n        files = [file for file in files if file.endswith('.json')]\n        # If there are no .json files, return an error\n        if not files:\n            return \"No files available for download\", 404",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "save_json",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def save_json():\n    print('Saving translation data to json')\n    with open(os.path.join(JSON_DIR, f\"{datetime.now().date()}.json\"), \"w\") as f:\n        json.dump(translationsJSON, f, indent=4)\ndef translate_text(text):\n    # with data_lock:\n    #     current_languages = languages.copy()\n    global languages\n    print(f'languages {languages}')\n    current_languages = languages.copy()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "translate_text",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def translate_text(text):\n    # with data_lock:\n    #     current_languages = languages.copy()\n    global languages\n    print(f'languages {languages}')\n    current_languages = languages.copy()\n    print(f'Current Languages {current_languages}')\n    translations = {}\n    for target in current_languages:\n        result = translate_client.translate(text, target_language=target)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "isRunning",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "isRunning = False\nJSON_DIR = \"translations\"\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\ntranscription_dir = './translations/'\ntranscription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "JSON_DIR",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "JSON_DIR = \"translations\"\napp = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\ntranscription_dir = './translations/'\ntranscription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = Flask('NBC Live translation', static_folder=\"web\", static_url_path=\"\")\nsocketio = SocketIO(app, cors_allowed_origins=\"*\")\ntranscription_dir = './translations/'\ntranscription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()\nlanguages = []",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "socketio",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "socketio = SocketIO(app, cors_allowed_origins=\"*\")\ntranscription_dir = './translations/'\ntranscription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()\nlanguages = []\nsupportedLanguages = [",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "transcription_dir",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "transcription_dir = './translations/'\ntranscription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()\nlanguages = []\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "transcription_path",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "transcription_path = \"\"\ntranslationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()\nlanguages = []\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "translationsJSON",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "translationsJSON = {\n    \"transcript\": [],\n    \"languages\": {}\n}\ntranslate_client = translate.Client()\nlanguages = []\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "translate_client",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "translate_client = translate.Client()\nlanguages = []\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},\n    {'code': 'ar', 'name': 'Arabic'},\n    {'code': 'zh', 'name': 'Chinese'},\n    {'code': 'fr', 'name': 'French'},\n    {'code': 'de', 'name': 'German'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "languages",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "languages = []\nsupportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},\n    {'code': 'ar', 'name': 'Arabic'},\n    {'code': 'zh', 'name': 'Chinese'},\n    {'code': 'fr', 'name': 'French'},\n    {'code': 'de', 'name': 'German'},\n    {'code': 'hi', 'name': 'Hindi'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "supportedLanguages",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "supportedLanguages = [\n    {'code': 'en', 'name': 'English'},\n    {'code': 'es', 'name': 'Spanish'},\n    {'code': 'fa', 'name': 'Persian'},\n    {'code': 'ar', 'name': 'Arabic'},\n    {'code': 'zh', 'name': 'Chinese'},\n    {'code': 'fr', 'name': 'French'},\n    {'code': 'de', 'name': 'German'},\n    {'code': 'hi', 'name': 'Hindi'},\n    {'code': 'it', 'name': 'Italian'},",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "MicrophoneStream",
+        "kind": 6,
+        "importPath": "MicrophoneStream",
+        "description": "MicrophoneStream",
+        "peekOfCode": "class MicrophoneStream(object):\n    \"\"\"Opens a recording stream as a generator yielding the audio chunks.\"\"\"\n    def __init__(self, rate, chunk, device_index):\n        self._rate = rate\n        self._chunk = chunk\n        self._device_index = device_index\n        # Create a thread-safe buffer of audio data\n        self._buff = queue.Queue()\n        self.closed = True\n        self._last_chunk_time = time.time()",
+        "detail": "MicrophoneStream",
+        "documentation": {}
+    }
+]
