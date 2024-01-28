@@ -34,7 +34,7 @@ isRunning = False
 isPaused = False
 
 client = speech.SpeechClient()
-app = Flask(__name__, static_folder="web", static_url_path="")
+app = Flask('NBC Live translation', static_folder="web", static_url_path="")
 # app.config.update(
 #     SESSION_COOKIE_SECURE=True,
 #     SESSION_COOKIE_SAMESITE='None',
@@ -498,9 +498,5 @@ if __name__ == '__main__':
     logging.getLogger('socketio').setLevel(logging.DEBUG)
     logging.getLogger('engineio').setLevel(logging.DEBUG)
     # socketio.serve_forever(app, debug=True)
-<<<<<<< HEAD
-    eventlet.wsgi.server(eventlet.listen(('', 451)), app)
-=======
     # eventlet.wsgi.server(eventlet.listen(('localhost', 5000)), app)
     socketio.run(app, debug=True, host='localhost', port=451)
->>>>>>> ce7b2c7c7320a5655be8eaaaa141ccb0bc95fb79

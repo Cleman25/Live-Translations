@@ -1,7 +1,7 @@
 {
     "body": {
         "Bg": "#000000",
-        "padding": 0
+        "padding": 2
     },
     "header": {
         "bg": "#ffffff",
@@ -28,7 +28,7 @@
             "TextColor": "#ffffff"
         },
         "fontFamily": "Arial",
-        "fontSize": 45,
+        "fontSize": 100,
         "fontWeight": "normal",
         "history": {
             "Bg": "#000000",
@@ -41,7 +41,7 @@
         "language": {
             "Bg": "#000000",
             "TextColor": "#ffffff",
-            "fontSize": 50
+            "fontSize": 48
         },
         "textColor": "#000000"
     }

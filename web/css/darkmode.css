@@ -197,6 +197,8 @@ label {
 	display: flex;
 	text-wrap: balance;
 	color: #fff;
+	max-height: calc(100% - 150px);
+	overflow-y: auto;
 }
 
 /* .language {
