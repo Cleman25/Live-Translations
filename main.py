@@ -58,6 +58,9 @@ class NewFileHandler(FileSystemEventHandler):
             return
         # Call getLatestTranscription when a new file is created
         getLatestTranscription()
+        # restart the transcription loop after getting latest transcription
+        stop()
+        start()
         
 def getLatestTranscription():
     """ Look for the latest transcription and update the transcription_path with the correct path
@@ -91,7 +94,6 @@ def getTranscription():
         try:
             # the tail read
             current_size = os.path.getsize(transcription_path)
-            # print(f'Current Size: {current_size}')
             if current_size > last_size:
                 print(f'Change Detected in Transcripted File')
                 with open(transcription_path, 'r') as file:
@@ -112,7 +114,6 @@ def getTranscription():
             time.sleep(10)
     
 def getRooms():
-    # rooms = sio.manager.rooms['/']
     rooms = socketio.server.manager.rooms['/']
     print(f'{rooms}')
     return rooms
@@ -139,7 +140,6 @@ def supported_languages():
 @socketio.on('instances')
 def instances():
     global languages
-    # sio.emit('instances', {'languages': languages})
     socketio.emit('instances', {'languages': languages})
 
 @socketio.on('tab_closed')
@@ -147,7 +147,6 @@ def tab_closed(data):
     print(f'Tab closed: {data}')
     global languages
     language = data['language']
-    # with data_lock:
     if language in languages:
         languages.remove(language)
     print(f'Removed {language}.\nCurrent Languages: {languages}')
@@ -230,7 +229,6 @@ def stop():
     print("Stop command received")
     if isRunning:
         isRunning = False
-    save_json()
     status()
 
 @socketio.on('get_translations')
@@ -239,7 +237,6 @@ def get_translations():
     files = os.listdir(JSON_DIR)
     files = [file for file in files if file.endswith('.json')]
     files.sort(reverse=True)
-    # sio.emit('translations', files)
     socketio.emit('translations', files)
 
 @app.route('/translation/<language>')
@@ -266,10 +263,6 @@ def http_status():
     return {
         'isRunning': isRunning
     }
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
 
 @socketio.on('connect')
 def on_connect():
@@ -316,12 +309,7 @@ def translate_text(text):
         translations[target] = result['translatedText']
         print(f'{target}: {result}\n')
     return translations
-    
-# # Function to perform text translation
-# def translate_text(text, target_language):
-#     result = translate_client.translate(text, target_language=target_language)
-#     translated_text = result['translatedText']
-#     return translated_text
+
 
 # Start Flask app
 if __name__ == '__main__':

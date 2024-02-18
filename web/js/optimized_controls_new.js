@@ -12,10 +12,14 @@ class Controls {
     constructor() {
         this.emit('status');
         this.emit('get_translations');
-        this.getLanguages();
-        this.initializeSettings();
-        this.listeners();
-        this.socketListeners();
+        // await this.getLanguages();
+        // asynchronous get Languages
+        this.getLanguages().then(() => {
+            console.log('Got languages');
+            this.initializeSettings();
+            this.listeners();
+            this.socketListeners();
+        });
     }
 
     initializeSettings() {
@@ -26,6 +30,8 @@ class Controls {
             .then(async (currentSettings) => {
                 this.settings = currentSettings;
                 await this.buildControlsForSettings(this.settings, this.controlsDiv);
+            }).then(async () => {
+                this.updateControlLabels();
             })
     }
         
@@ -43,7 +49,8 @@ class Controls {
             class: 'control'
         });
         const controlLabel = $('<label>', {
-            text: sP
+            text: sP,
+            label: sP
         });
         controlContainer.append(controlLabel);
 
@@ -150,8 +157,36 @@ class Controls {
         } else {
             console.log(`Unknown type for setting ${settingPath}: ${typeof settingValue}`);
         }
-
         parentContainer.append(controlContainer);
+    }
+
+    updateControlLabels() {
+        const languageNames = {
+            'ar': 'Arabic',
+            'de': 'German',
+            'en': 'English',
+            'es': 'Spanish',
+            'fa': 'Persian',
+            'fr': 'French',
+            'hi': 'Hindi',
+            'ig': 'Igbo',
+            'it': 'Italian',
+            'ja': 'Japanese',
+            'ko': 'Korean',
+            'pt': 'Portuguese',
+            'ru': 'Russian',
+            'tr': 'Turkish',
+            'ur': 'Urdu',
+            'zh': 'Chinese'
+        };
+    
+        const controlLabels = document.querySelectorAll('.control label');
+        controlLabels.forEach((controlLabel) => {
+            const lbl = controlLabel.getAttribute('label');
+            if (lbl && languageNames[lbl]) {
+                controlLabel.textContent = `${lbl} - ${languageNames[lbl]}`
+            }
+        });
     }
 
     setSettingByPath(settings, path, value) {
@@ -278,7 +313,7 @@ class Controls {
         this.emit('status');
     }
 
-    getLanguages() {
+    async getLanguages() {
         this.emit('supported_languages');
     }
 

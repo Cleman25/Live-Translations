@@ -121,6 +121,13 @@ class TranslationApp {
         if (settings.hasOwnProperty('borderRadius') || settings.hasOwnProperty('border-radius') || settings.hasOwnProperty('borderradius') || settings.hasOwnProperty('BorderRadius') || settings.hasOwnProperty('Border-Radius')) {
             element.style.borderRadius = settings.borderRadius;
         }
+        if (settings.hasOwnProperty('languageSizes')) {
+            const langCode = this.langCode.toLowerCase();
+            const langSize = settings.languageSizes;
+            if (langSize.hasOwnProperty(langCode)) {
+                element.style.fontSize = langSize[langCode] + 'px';
+            }
+        }
     }
 
     handleSupportedLanguages(data) {

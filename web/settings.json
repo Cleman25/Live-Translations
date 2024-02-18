@@ -25,10 +25,11 @@
         "borderRadius": "0px",
         "currentText": {
             "Bg": "#141414",
-            "TextColor": "#ffffff"
+            "TextColor": "#ffffff",
+            "Visible": false
         },
         "fontFamily": "Arial",
-        "fontSize": 100,
+        "fontSize": 31,
         "fontWeight": "normal",
         "history": {
             "Bg": "#000000",
@@ -41,7 +42,25 @@
         "language": {
             "Bg": "#000000",
             "TextColor": "#ffffff",
-            "fontSize": 48
+            "fontSize": 37
+        },
+        "languageSizes": {
+            "ar": 48,
+            "de": 48,
+            "en": 48,
+            "es": 48,
+            "fa": 23,
+            "fr": 48,
+            "hi": 48,
+            "ig": 48,
+            "it": 48,
+            "ja": 48,
+            "ko": 48,
+            "pt": 48,
+            "ru": 48,
+            "tr": 48,
+            "ur": 48,
+            "zh": 48
         },
         "textColor": "#000000"
     }
