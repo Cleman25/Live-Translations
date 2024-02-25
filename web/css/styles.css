@@ -461,7 +461,7 @@ li a {
     width: 100%;
     display: inline-block;
     overflow-x: hidden;
-    break-word: break-word;
+    word-break: break-word;
 }
 
 .currentText {
