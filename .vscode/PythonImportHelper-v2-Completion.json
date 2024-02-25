@@ -717,7 +717,7 @@
         "kind": 6,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "class NewFileHandler(FileSystemEventHandler):\n    def on_created(self, event):\n        if event.is_directory or not event.src_path.endswith('.txt'):\n            return\n        with open(event.src_path, 'r') as file:\n            transcription = file.read()\n        # Translate transcription\n        translation = translate_client.translate(transcription, target_language='en')\n        # Emit transcription and translation via SocketIO\n        socketio.emit('new_transcription', {'content': transcription, 'translation': translation['translatedText']})",
+        "peekOfCode": "class NewFileHandler(FileSystemEventHandler):\n    def on_created(self, event):\n        if event.is_directory or not event.src_path.endswith('.txt'):\n            return\n        # Call getLatestTranscription when a new file is created\n        getLatestTranscription()\n        # restart the transcription loop after getting latest transcription\n        stop()\n        start()\ndef getLatestTranscription():",
         "detail": "main",
         "documentation": {}
     },
@@ -753,7 +753,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def getRooms():\n    # rooms = sio.manager.rooms['/']\n    rooms = socketio.server.manager.rooms['/']\n    print(f'{rooms}')\n    return rooms\n@app.route('/')\ndef home():\n    return show_controls()\n@app.route('/controls')\ndef show_controls():",
+        "peekOfCode": "def getRooms():\n    rooms = socketio.server.manager.rooms['/']\n    print(f'{rooms}')\n    return rooms\n@app.route('/')\ndef home():\n    return show_controls()\n@app.route('/controls')\ndef show_controls():\n    return render_template('controls.html')",
         "detail": "main",
         "documentation": {}
     },
@@ -789,7 +789,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n@socketio.on('instances')\ndef instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):",
+        "peekOfCode": "def supported_languages():\n    global supportedLanguages\n    return jsonify(supportedLanguages)\n@socketio.on('instances')\ndef instances():\n    global languages\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):\n    print(f'Tab closed: {data}')",
         "detail": "main",
         "documentation": {}
     },
@@ -798,7 +798,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def instances():\n    global languages\n    # sio.emit('instances', {'languages': languages})\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:",
+        "peekOfCode": "def instances():\n    global languages\n    socketio.emit('instances', {'languages': languages})\n@socketio.on('tab_closed')\ndef tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    if language in languages:\n        languages.remove(language)",
         "detail": "main",
         "documentation": {}
     },
@@ -807,7 +807,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    # with data_lock:\n    if language in languages:\n        languages.remove(language)\n    print(f'Removed {language}.\\nCurrent Languages: {languages}')\n    instances()\n@socketio.on('tab_focus')",
+        "peekOfCode": "def tab_closed(data):\n    print(f'Tab closed: {data}')\n    global languages\n    language = data['language']\n    if language in languages:\n        languages.remove(language)\n    print(f'Removed {language}.\\nCurrent Languages: {languages}')\n    instances()\n@socketio.on('tab_focus')\ndef tab_focus(data):",
         "detail": "main",
         "documentation": {}
     },
@@ -861,7 +861,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def start_observer():\n    global transcription_dir\n    if not os.path.exists(transcription_dir):\n        os.makedirs(transcription_dir)\n    event_handler = NewFileHandler()\n    observer = Observer()\n    observer.schedule(event_handler, transcription_dir, recursive=False)\n    observer.start()\n    observer.join()\ndef send_translations(data):",
+        "peekOfCode": "def start_observer():\n    global transcription_dir\n    if not os.path.exists(transcription_dir):\n        os.makedirs(transcription_dir)\n    event_handler = NewFileHandler()\n    observer = Observer()\n    observer.schedule(event_handler, transcription_dir, recursive=False)\n    observer.start()\n    try:\n        while observer.is_alive():",
         "detail": "main",
         "documentation": {}
     },
@@ -888,7 +888,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def stop():\n    global isRunning\n    print(\"Stop command received\")\n    if isRunning:\n        isRunning = False\n    save_json()\n    status()\n@socketio.on('get_translations')\ndef get_translations():\n    # Get all files in translations and return them",
+        "peekOfCode": "def stop():\n    global isRunning\n    print(\"Stop command received\")\n    if isRunning:\n        isRunning = False\n    status()\n@socketio.on('get_translations')\ndef get_translations():\n    # Get all files in translations and return them\n    files = os.listdir(JSON_DIR)",
         "detail": "main",
         "documentation": {}
     },
@@ -897,7 +897,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def get_translations():\n    # Get all files in translations and return them\n    files = os.listdir(JSON_DIR)\n    files = [file for file in files if file.endswith('.json')]\n    files.sort(reverse=True)\n    # sio.emit('translations', files)\n    socketio.emit('translations', files)\n@app.route('/translation/<language>')\ndef index(language=None):\n    if language is None:",
+        "peekOfCode": "def get_translations():\n    # Get all files in translations and return them\n    files = os.listdir(JSON_DIR)\n    files = [file for file in files if file.endswith('.json')]\n    files.sort(reverse=True)\n    socketio.emit('translations', files)\n@app.route('/translation/<language>')\ndef index(language=None):\n    if language is None:\n        return \"No language code specified\"",
         "detail": "main",
         "documentation": {}
     },
@@ -924,7 +924,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def http_status():\n    global isRunning\n    return {\n        'isRunning': isRunning\n    }\n# @app.route('/')\n# def index():\n#     return render_template('index.html')\n@socketio.on('connect')\ndef on_connect():",
+        "peekOfCode": "def http_status():\n    global isRunning\n    return {\n        'isRunning': isRunning\n    }\n@socketio.on('connect')\ndef on_connect():\n    print('Client connected')\n@socketio.on('disconnect')\ndef on_disconnect():",
         "detail": "main",
         "documentation": {}
     },

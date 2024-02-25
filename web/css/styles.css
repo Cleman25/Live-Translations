@@ -460,6 +460,8 @@ li a {
 .history-span {
     width: 100%;
     display: inline-block;
+    overflow-x: hidden;
+    break-word: break-word;
 }
 
 .currentText {

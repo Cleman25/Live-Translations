@@ -25,8 +25,7 @@
         "borderRadius": "0px",
         "currentText": {
             "Bg": "#141414",
-            "TextColor": "#ffffff",
-            "Visible": false
+            "TextColor": "#ffffff"
         },
         "fontFamily": "Arial",
         "fontSize": 31,
@@ -48,7 +47,7 @@
             "ar": 48,
             "de": 48,
             "en": 48,
-            "es": 48,
+            "es": 80,
             "fa": 23,
             "fr": 48,
             "hi": 48,
